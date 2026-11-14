@@ -20,7 +20,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 nav { display: flex; flex-wrap: wrap; gap: 0 1.35rem; }
 nav a { color: var(--muted); text-decoration: none; font-size: .875rem; padding-block: .55rem; }
 nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
-.hero { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(5.5rem, 13vw, 11rem) clamp(4rem, 9vw, 7rem); }
+.hero { position: relative; isolation: isolate; overflow: hidden; min-height: min(37rem, 75svh); padding-block: clamp(5.5rem, 13vw, 11rem) clamp(4rem, 9vw, 7rem); }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: -2;
   background: radial-gradient(ellipse at 75% 62%, #1a253d, transparent 57%),
@@ -41,8 +41,6 @@ h1, h2, p { margin-top: 0; }
 h1 { line-height: 1.18; font-size: clamp(2rem, 5.1vw, 3.7rem); letter-spacing: -.025em; }
 .title { margin-bottom: 1.45rem; font: 400 clamp(2.65rem, 10vw, 6.9rem)/1.02 Georgia, "Times New Roman", serif; letter-spacing: .095em; }
 .title span { display: block; margin-top: .6rem; font-size: .38em; letter-spacing: .15em; color: var(--gold); }
-.hero p { max-width: 30ch; font-size: clamp(.95rem, 2vw, 1.14rem); }
-.hero p[lang="en"] { color: var(--muted); }
 .links { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.8rem; }
 .links a { display: inline-flex; align-items: center; min-height: 44px; padding: .45rem 1rem; border: 1px solid var(--line); border-radius: .2rem; background: #0b0f19d9; text-decoration: none; }
 .links a:first-child { border-color: #9b7d55; }
