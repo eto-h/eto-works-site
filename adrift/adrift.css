@@ -1,0 +1,18 @@
+
+.adrift { --gold:#dcebb1; --night:#0c1819; --panel:#152424; --line:#334342; --muted:#c1cec9; }
+.skip { position:absolute; left:1rem; top:-6rem; z-index:2; background:var(--night); padding:.6rem; }
+.skip:focus { top:0; }
+.adrift-hero { min-height:38rem; display:flex; align-items:center; padding:4rem 0;
+ background:linear-gradient(90deg,#0b1819f2,#0b1819ba 48%,#0b181933),url("assets/AdriftIcon.png") center 50%/cover; }
+.adrift-hero h1 { font-size:clamp(3.8rem,12vw,8.5rem); font-weight:600; letter-spacing:.12em; margin-bottom:1rem; }
+.eyebrow { color:var(--gold); font-size:.75rem; letter-spacing:.18em; }
+.lead { font-size:clamp(1.5rem,3vw,2.3rem); line-height:1.55; }
+.hero-copy>.links { justify-content:flex-start; }
+.hero-copy>p { max-width:28rem; }
+.feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2rem; }
+.feature-grid h3 { color:var(--gold); }
+.adrift .article { padding-top:2.4rem; }
+.adrift .article section:first-of-type { margin-top:1.6rem; }
+@media(max-width:600px) { .adrift-hero { min-height:38rem; background-position:center; align-items:flex-end;
+ background-image:linear-gradient(0deg,#0b1819f5,#0b1819bb 35%,#0b181911),url("assets/AdriftIcon.png"); padding-bottom:3rem; }
+ .feature-grid { grid-template-columns:1fr; gap:.2rem; } .bar nav { gap:0 1rem; } }

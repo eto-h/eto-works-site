@@ -1,0 +1,10 @@
+
+.game-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; }
+.game-grid>.hero { min-height:40rem; padding:4rem 1.7rem; align-items:end; }
+.game-copy { width:min(100%,34rem); margin-inline:auto; text-align:center; }
+.game-note { color:#e1e6e2; margin-top:1.2rem; font-size:.95rem; }
+.game-note span { color:#bdc9c3; font-size:.85rem; }
+.adrift-card { background:linear-gradient(0deg,#0c1819f5,#0c181977 58%,#0c181922),url("adrift/assets/AdriftIcon.png") center 45%/cover; }
+.adrift-title { font-size:clamp(3rem,6vw,6rem); font-weight:600; letter-spacing:.13em; margin-bottom:0; line-height:1.2; }
+.eyebrow { color:#dcebb1; font-size:.75rem; letter-spacing:.18em; }
+@media(max-width:760px) { .game-grid { grid-template-columns:1fr; } .game-grid>.hero { min-height:37rem; padding:3rem 1.25rem; } }
