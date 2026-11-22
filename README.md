@@ -1,21 +1,19 @@
-# ETO Works 公式サイト
+# eto works 公式サイト
 
-BEYOND: Quiet Ascent の案内・サポート・プライバシーポリシーを配信する静的サイトです。
+[https://eto-works.com/](https://eto-works.com/) を配信する、HTML/CSSと画像だけの静的サイトです。現在はBEYOND: Quiet AscentとADRIFTを掲載しています。Node.js、Unity、EAS、データベースの起動は不要です。
 
-- `index.html` · トップ
-- `support.html` · 操作と問い合わせ案内
-- `privacy.html` · iOS 版の日英プライバシーポリシー
-- `licenses.html` · 第三者ライセンス
-- `app-ads.txt` · AdMob が指定する販売者情報。ドメイン直下で配信
+**編集を引き継ぐCodexは [AGENTS.md](AGENTS.md) と [HANDOFF.md](HANDOFF.md) を先に読んでください。** 新しいアプリの追加、Git・公開手順、並行作業の注意、検証方法をまとめています。
 
-## 更新
+| 対象 | ファイル／公開先 |
+|---|---|
+| 共通トップ | `index.html` → `/` |
+| BEYOND | ルートの `support.html`、`privacy.html`、`licenses.html` |
+| ADRIFT | `adrift/index.html`、`support.html`、`privacy.html`、`licenses.html` → `/adrift/` 以下 |
+| 共通スタイル | `site.css`、トップ一覧用 `games.css` |
+| ADRIFTスタイル | `adrift/adrift.css` |
+| 共通の広告販売者情報 | `/app-ads.txt` |
+| 公開設定 | `CNAME`（eto-works.com）、`.nojekyll` |
 
-対象の HTML や CSS を編集し、`python -m http.server 8079` でローカル表示を確認します。GitHub の `main` に反映すると、Settings → Pages → Deploy from a branch の `main / (root)` から再配信されます。Actions の配信結果を確認し、公開 URL を開き直してください。
+ローカル確認はリポジトリ直下で `python -m http.server 8079 --bind 127.0.0.1` を実行し、`http://127.0.0.1:8079/` を開きます。
 
-公開用連絡先が確定したら、`support.html` に連絡先を記載します。問い合わせ情報の取り扱いを `privacy.html` の日本語・英語に追記します。SDK・広告構成を更新するときは、配信するビルドのプライバシー開示と照合してポリシーを更新してください。
-
-## 独自ドメイン
-
-リポジトリの Settings → Pages でカスタムドメイン `eto-works.com` を設定します。DNS の更新と証明書の発行を確認後、Enforce HTTPS を有効にします。トップ、`/support.html`、`/privacy.html`、`/licenses.html` が HTTPS で表示され、`/app-ads.txt` が HTTP 200 のプレーンテキストで取得できることを確認します。
-
-App Store Connect の Marketing URL はサイトのルート、Support URL と Privacy Policy URL は対応するページを使用します。販売者情報を更新する場合は AdMob 管理画面の指定行と照合します。
+公開先は [eto-h/eto-works-site](https://github.com/eto-h/eto-works-site) の `main`。既存運用はGitHub Pagesの `main / (root)` で、push後の [Actions](https://github.com/eto-h/eto-works-site/actions) とHTTPSの実URLを確認します。新しいアプリを追加するためのドメイン・DNS・HTTPS設定の変更は不要です。
