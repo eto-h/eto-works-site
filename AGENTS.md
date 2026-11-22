@@ -1,13 +1,5 @@
 # eto works サイト編集ルール
 
-- 最初に `HANDOFF.md` を読み、`git status -sb`、`git remote -v`、`git worktree list`、最新 `origin/main` を確認する。ユーザーの現在の依頼範囲・既存の承認を優先する。
-- このリポジトリは共有公式サイト。ルートのSupport／Privacy／LicensesはBEYOND専用。ADRIFTは `adrift/`。新しいアプリは固有のディレクトリへ追加し、別アプリの本文・URL・ライセンス・SDK設定を上書きしない。
-- サイトは静的HTML/CSS。既存の構成で解決し、不要なフレームワーク移行・ビルド基盤・解析タグを追加しない。
-- 共通 `index.html` へアプリのカード／リンクを追加し、既存ゲームの掲載を維持する。アプリ固有CSSはbodyクラスや固有セレクターへスコープし、他ページへの影響を確認する。
-- `CNAME`、`.nojekyll`、既存ドメイン・DNS・HTTPS・Pages配信方式を新アプリ追加のために変更しない。`app-ads.txt` はドメイン共通。AdMobの管理画面による根拠なく既存行を消す／IDを置き換えない。
-- PrivacyとSupportは実際の配布候補のソース・SDK・設定に合わせる。広告、UMP、ATT、保存、課金、外部送信等を実装したか確認し、他ゲームの説明をそのまま複製しない。画像・音源・フォント・プラグインの必要な権利表示を残す。
-- GitHub Pagesもリポジトリも公開。秘密鍵、認証情報、署名ファイル、個人の審査連絡先、未整理の録画・ログ・ゲームビルドを入れない。公開問い合わせ先は既存ページの `support@eto-works.com` を使う。
-- 他のCodexが使う作業ツリーの未コミット変更をリセット・上書き・自動stashしない。同じフォルダーを同時編集せず、必要なら環境のworktree作成機能または別cloneを使う。新しいworktreeの必要がなければ既存の適切なclean checkoutを使う。
-- 差分・ローカル表示・リンク・スマートフォン幅・既存ページを確認し、依頼に公開が含まれていれば通常のcommit/push/Pages確認まで進める。push先は `main`。他作業が先に更新した場合はfetchして差分を調整し、force pushしない。
-- サイト公開はアプリのApp Store提出・一般公開とは別。ユーザーが指定した範囲を超えてアプリの審査提出、配布地域、価格、広告／署名設定を変更しない。
-- 完了時は変更ファイル、Gitコミット、Pages配信結果、実URL、実施した検証と未検証項目を報告する。HTTP 200を実機の目視確認と呼ばない。
+- [README.md](README.md) のサイト構成と既存の公開URLを確認する。ルートのSupport・Privacy・LicensesはBEYOND用。ADRIFTは `adrift/`。
+- 公式サイトの公開に必要なページ、画像、ライセンス、構成案内を置く。ローカルパス、内部向け手順、認証情報、未公開の審査資料は公開リポジトリへ入れない。
+- 担当者向けの作業手順は、権限のあるGitHubアカウントで [非公開のサイト引き継ぎ](https://github.com/eto-h/eto-works-development-guide/blob/main/ETO_WORKS_SITE_HANDOFF.md) を参照する。
