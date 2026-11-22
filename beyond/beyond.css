@@ -1,0 +1,55 @@
+.beyond .skip { position: absolute; top: -6rem; left: 1rem; z-index: 2; padding: .6rem; background: var(--night); }
+.beyond .skip:focus { top: 0; }
+.beyond-hero {
+  display: grid;
+  align-items: center;
+  min-height: clamp(28rem, 65svh, 42rem);
+  padding-block: 4rem 7rem;
+  background: linear-gradient(#05081799, #05081766 62%, #05081722), url("../assets/BeyondTitle.png") center 87% / cover no-repeat;
+}
+.beyond-hero-copy { text-align: center; }
+.beyond-hero h1 { width: min(100%, 40rem); margin: 0 auto 1.3rem; }
+.beyond-hero h1 img { display: block; width: 100%; height: auto; }
+.beyond-hero .links a { gap: .25em; }
+.beyond-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, .65fr); gap: 2rem 4rem; padding-block: clamp(2.8rem, 6vw, 5rem); }
+.beyond h2 { font-size: clamp(1.45rem, 4vw, 2rem); line-height: 1.4; font-weight: 550; }
+.beyond h2 span { color: var(--muted); font-size: .6em; font-weight: 450; }
+.beyond-intro p, .beyond-controls p, .beyond-english p, .beyond-english li { color: var(--muted); }
+.beyond-features { padding: 1.2rem 1.5rem; border: 1px solid var(--line); border-radius: .55rem; background: var(--panel); }
+.beyond-features p { color: var(--gold); }
+.beyond-features ul { padding-inline-start: 1.2rem; margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+.beyond-controls, .beyond-gallery, .beyond-english { border-top: 1px solid var(--line); padding-block: clamp(2.5rem, 5vw, 4rem); scroll-margin-top: 1.5rem; }
+.beyond-steps { list-style: none; padding: 0; margin: 1.5rem 0 2rem; counter-reset: controls; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+.beyond-steps li { counter-increment: controls; }
+.beyond-steps li::before { content: counter(controls); display: grid; place-items: center; width: 2rem; height: 2rem; margin-bottom: .75rem; border: 1px solid var(--line); border-radius: .35rem; background: var(--panel); color: var(--gold); }
+.beyond h3 { font-size: 1.08rem; font-weight: 550; margin: 0 0 .5rem; }
+.beyond-recovery { border-left: 2px solid #9b7d55; padding-left: 1.2rem; max-width: 48rem; }
+.beyond-recovery h3 { color: var(--gold); }
+.beyond-settings { margin-top: 1.6rem; font-size: .94rem; }
+.gallery-note { max-width: 46rem; color: var(--muted); }
+.beyond-shot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 2rem); margin-top: 1.6rem; }
+.beyond-shot-grid figure { min-width: 0; margin: 0; }
+.beyond-shot { display: block; border: 1px solid var(--line); border-radius: .6rem; overflow: hidden; background: var(--panel); }
+.beyond-shot:hover { border-color: var(--gold); }
+.beyond-shot img { display: block; width: 100%; height: auto; }
+.beyond-shot-grid figcaption { margin-top: .65rem; color: var(--ink); }
+.beyond-shot-grid figcaption span { display: block; font-size: .85rem; color: var(--muted); }
+.beyond-english > p, .beyond-english > ol { max-width: 46rem; }
+.beyond-english h3 { margin-top: 1.6rem; color: var(--gold); }
+.beyond-english ol { padding-inline-start: 1.3rem; }
+.beyond-english li + li { margin-top: .5rem; }
+@media (max-width: 50rem) {
+  .beyond-intro { grid-template-columns: 1fr; gap: 1rem; }
+  .beyond-shot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 36rem) {
+  .beyond .bar nav { gap: 0 1rem; }
+  .beyond-hero { min-height: 29rem; padding-block: 4rem 8rem; }
+  .beyond-steps { grid-template-columns: 1fr; gap: .8rem; }
+  .beyond-steps li { position: relative; padding-left: 3rem; }
+  .beyond-steps li::before { position: absolute; left: 0; top: .1rem; }
+}
+@media (max-width: 25rem) {
+  .beyond-shot-grid { grid-template-columns: 1fr; }
+  .beyond-shot-grid figure { width: min(100%, 19rem); margin-inline: auto; }
+}
