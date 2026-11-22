@@ -3,9 +3,33 @@
 <link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="kotovim.css"><link rel="icon" href="logo.svg" type="image/svg+xml"></head>
 <body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="en.html">kotoVim</a><a href="support.html#english">Guide</a><a href="./" lang="ja">日本語</a></nav></header>
 <main class="shell">
-<section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">Vim-style editing for everyday Windows apps</p>
-<p>Move, select and edit in supported text fields, including Notepad and specific Office editors. The English edition keeps normal Alt behavior. A separate Japanese edition adds Microsoft IME and Japanese word boundaries for lowercase commands.</p><a class="kv-button" href="#download">Availability</a></div>
+<section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">How few keys can that edit take?</p>
+<p>AI can draft the text. The finishing touches are yours. Jump to the word you want and rewrite it with a few keystrokes. Try the editing tricks that make Vim look like magic, right in Word and Outlook.</p>
+<div class="kv-actions"><a class="kv-button" href="#demos">Watch the comparisons</a><a href="#download">Availability</a></div></div>
 <figure class="kv-editor"><figcaption>Word editing in Normal mode</figcaption><div class="kv-paper">alpha <span>beta</span>, gamma</div><div class="kv-mode"><strong>NORMAL</strong><span><kbd>diw</kbd></span></div></figure></section>
+<section class="kv-demos" id="demos" aria-labelledby="demo-title">
+<h2 id="demo-title">Same text, two ways to edit</h2>
+<p>Mouse and keyboard on the left, kotoVim on the right. Follow the caret, selection, and keys in these recreated editing demonstrations.</p>
+<article class="kv-demo" id="demo-word">
+<header><h3>Word</h3><p>Change the meeting day and update the deck instructions</p></header>
+<video controls playsinline preload="none" width="1200" height="676" poster="media/word-en.webp" aria-label="Word editing comparison with and without kotoVim">
+<source src="media/word-en.mp4" type="video/mp4"><a href="media/word-en.mp4">Open the Word comparison video</a></video>
+<p>Use <kbd>gg</kbd> and <kbd>3w</kbd> to reach the date, then <kbd>cw</kbd> to change it. Jump to the last line with <kbd>G</kbd> and rewrite it with <kbd>cc</kbd>.</p>
+</article>
+<article class="kv-demo" id="demo-outlook">
+<header><h3>Outlook</h3><p>Move a deadline and trim the opening of an email line</p></header>
+<video controls playsinline preload="none" width="1200" height="676" poster="media/outlook-en.webp" aria-label="Outlook editing comparison with and without kotoVim">
+<source src="media/outlook-en.mp4" type="video/mp4"><a href="media/outlook-en.mp4">Open the Outlook comparison video</a></video>
+<p>Use <kbd>ciw</kbd> to change the whole word from inside it. On the last line, <kbd>v5l</kbd> selects five characters and <kbd>d</kbd> removes them.</p>
+</article>
+</section>
+<section class="kv-golf" aria-labelledby="golf-title">
+<div><h2 id="golf-title">A round of Vim golf</h2>
+<p>Pick an edit and see how few keystrokes you need to get there. Start with one word.</p></div>
+<div class="kv-golf-card"><p><code>Meet on Tue<mark>s</mark>day.</code></p>
+<p>The caret is on the highlighted letter. How would you change <code>Tuesday</code> to <code>Thursday</code>?</p>
+<details><summary>Show a three-key route</summary><p>Press <kbd>c</kbd> <kbd>i</kbd> <kbd>w</kbd> to clear the whole word and enter Insert. Type <code>Thursday</code> and press <kbd>Esc</kbd> to return to Normal.</p></details></div>
+</section>
 <div class="kv-sections">
 <section id="download"><h2>Download</h2>
 <p>kotoVim is in development. Free downloads for the English and Japanese editions are in preparation. Download links and verification instructions will appear here when available.</p>
