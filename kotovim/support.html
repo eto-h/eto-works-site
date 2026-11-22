@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kotoVim 操作ガイド | ETO Works</title>
+<link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="kotovim.css"><link rel="icon" href="logo.svg" type="image/svg+xml"></head>
+<body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="#english" lang="en">English</a></nav></header>
+<main class="article kv-guide"><h1>kotoVim 操作ガイド</h1><section ><h2>操作一覧</h2>
+<div class="kv-search" hidden><label>操作を検索 <input type="search" data-filter autocomplete="off"></label></div>
+<div class="kv-table"><table><thead><tr><th scope="col">キー</th><th scope="col">動作・制約</th></tr></thead><tbody><tr><th scope="row"><code>i / v / Esc / F8</code></th><td>入力・選択・Normalへ復帰</td></tr><tr><th scope="row"><code>h j k l / gg G</code></th><td>移動、文書の先頭と末尾</td></tr><tr><th scope="row"><code>w b e / 3w</code></th><td>単語移動。日本語版では漢字・かな・助詞から区切りを推定</td></tr><tr><th scope="row"><code>W B E</code></th><td>空白区切りのまとまりで移動</td></tr><tr><th scope="row"><code>dw cw cc dd / o O</code></th><td>dw・cwはカーソル位置から編集。範囲・改行に制約</td></tr><tr><th scope="row"><code>diw ciw yiw</code></th><td>単語全体を削除・変更・コピー</td></tr><tr><th scope="row"><code>y p u</code></th><td>クリップボードと元に戻す</td></tr><tr><th scope="row"><code>r / :%s/old/new/g</code></th><td>1文字・リテラル一括置換。対象欄に制限</td></tr><tr><th scope="row"><code>dW / viw / viW / .</code></th><td>未実装</td></tr></tbody></table></div>
+<p>例文をメモ帳に貼り付け、行頭で w を押すと「読む」へ移動します。b で戻ります。</p>
+<pre><code id="sample" lang="ja">日本語を読む。次の文。</code></pre><button type="button" class="kv-copy-example" data-copy="sample" data-done="コピーしました" data-error="例文を選択してコピーしてください。" hidden>例文をコピー</button><span aria-live="polite"></span></section>
+<section><h2>対応アプリ</h2>
+<p>2026-11-22 JST整理。以下はWindows 11の旧版診断ビルドの結果です。公開候補の全面再試験は残っています。</p>
+<ul><li>メモ帳、Word、新Outlook作成本文。モード移行と移動（0.7〜0.8）。</li>
+<li>Excelセル編集中、PowerPointテキストボックス。移動と空行追加（0.7.2〜0.8.1）。</li>
+<li>Chromeアドレスバー・ローカル入力欄、デスクトップ版ChatGPTでNormal移行（0.5.1〜0.6.1）。</li>
+<li>未確認。従来版Outlook、Windows 10、Google検索の実サイトでのキー操作。</li></ul></section>
+<section id="verify"><h2>確認とFAQ</h2>
+<h3>ファイルを確認するには？</h3><pre><code>Get-FileHash -LiteralPath .\kotoVim-ja.exe -Algorithm SHA256</code></pre>
+<p>対象ビルドの公開ハッシュと照合します。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
+<h3>F8が動作しないときは？</h3>
+<p>通知領域で起動を確認し、編集可能な欄にカーソルを置いてIME変換を確定します。Excelはセル内編集、PowerPointは文字内をクリックします。パスワードや読み取り専用欄は対象外です。必要に応じて通知領域で一時停止またはショートカットを解除できます。</p></section><section id="english" lang="en"><h2>Commands</h2>
+<div class="kv-search" hidden><label>Filter commands <input type="search" data-filter autocomplete="off"></label></div>
+<div class="kv-table"><table><thead><tr><th scope="col">Keys</th><th scope="col">Behavior</th></tr></thead><tbody><tr><th scope="row"><code>i / v / Esc / F8</code></th><td>Type, select, return to Normal</td></tr><tr><th scope="row"><code>h j k l / gg G</code></th><td>Caret and document motions</td></tr><tr><th scope="row"><code>w b e / 3w</code></th><td>Word movement and counts. Normal uses verified boundaries in supported fields.</td></tr><tr><th scope="row"><code>W B E</code></th><td>WORD motions group all non-whitespace characters</td></tr><tr><th scope="row"><code>dw cw cc dd / o O</code></th><td>dw and cw start at the caret. Range and line restrictions apply.</td></tr><tr><th scope="row"><code>diw ciw yiw</code></th><td>Delete, change or copy the whole word</td></tr><tr><th scope="row"><code>y p u</code></th><td>Host clipboard and Undo</td></tr><tr><th scope="row"><code>r / :%s/old/new/g</code></th><td>Character or literal bulk replacement in supported fields</td></tr><tr><th scope="row"><code>dW / viw / viW / .</code></th><td>Unimplemented</td></tr></tbody></table></div>
+<p>Paste the sample into Notepad and place the caret at the t in beta. Use b to move to the b, or start at the t and use diw to delete beta.</p>
+<pre><code id="sample-en">alpha  beta, gamma</code></pre><button type="button" class="kv-copy-example" data-copy="sample-en" data-done="Copied" data-error="Select the text to copy it." hidden>Copy example</button><span aria-live="polite"></span></section>
+<section><h2>Compatibility evidence</h2>
+<p>Reviewed 2026-11-22 JST. The following scopes are from earlier Windows 11 diagnostic builds. Full testing of the release candidate is pending.</p>
+<ul><li>Notepad, Word and new Outlook message body: mode and motion tests (0.7–0.8).</li>
+<li>Excel cells in edit mode and PowerPoint text boxes: movement and line opening (0.7.2–0.8.1).</li>
+<li>Chrome address/local fields and desktop ChatGPT Normal entry (0.5.1–0.6.1).</li>
+<li>Unverified: classic Outlook, Windows 10 and live Google Search keyboard flow.</li></ul></section>
+<section id="verify-en"><h2>Verification and FAQ</h2>
+<h3>How do I verify the file?</h3><pre><code>Get-FileHash -LiteralPath .\kotoVim-en.exe -Algorithm SHA256</code></pre>
+<p>Compare the result against the value for that exact build. If blocked, use the approved Windows or workplace review process.</p>
+<h3>Why does F8 not work?</h3>
+<p>Verify that the tray app is running and that the writable text caret is active. Confirm any IME composition first. Excel requires entering cell editing, and PowerPoint requires clicking inside text. Password and read-only fields are excluded. Pause or disable shortcut remapping in the tray when needed.</p></section>
+<section id="contact"><h2>お問い合わせ / Feedback</h2>
+<p>Windows、kotoVim、対象アプリのバージョン、欄の種類と再現手順を添えてください。機密文書、個人情報、認証情報は添付しないでください。</p>
+<p lang="en">Include version numbers, field type and reproduction steps. Omit private documents, personal data and credentials.</p>
+<p><a href="mailto:support@eto-works.com?subject=kotoVim&amp;body=Windows%3A%0AkotoVim%3A%0AApp%20and%20version%3A%0AField%3A%0ASteps%3A">support@eto-works.com</a></p></section></main><script src="guide.js" defer></script>
+<footer class="footer shell"><p>eto works</p><nav><a href="privacy.html">Privacy</a><a href="licenses.html">Licenses</a><a href="support.html#contact">Contact</a></nav></footer></body></html>

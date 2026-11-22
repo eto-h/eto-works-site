@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kotoVim — いつもの入力欄で、Vim風の編集。 | ETO Works</title>
+<link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="kotovim.css"><link rel="icon" href="logo.svg" type="image/svg+xml"></head>
+<body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="en.html" lang="en">English</a></nav></header>
+<main class="shell">
+<section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">いつもの入力欄で、Vim風の編集。</p>
+<p>メモ帳やOfficeの対応する入力欄で移動・選択・編集。日本語版は日本語IMEの切り替えと日本語の単語移動に対応します。英語専用版も選べます。</p><a class="kv-button" href="#download">配布状況</a></div>
+<figure class="kv-editor"><figcaption>日本語の単語移動の例</figcaption><div class="kv-paper" lang="ja"><span>日本語を</span>読む。次の文。</div><div class="kv-mode"><strong>NORMAL</strong><span><kbd>w</kbd> / <kbd>b</kbd></span></div></figure></section>
+<div class="kv-sections">
+<section id="download"><h2>ダウンロード</h2>
+<p>開発中です。日本語版・英語専用版の無料ダウンロードを準備しています。配布を開始したら、ここに入手先とファイルの確認方法を掲載します。</p>
+<dl class="kv-meta"><dt>開発版</dt><dd>0.9.0-rc.4 · 2026-11-23</dd><dt>対象環境</dt><dd>Windows 10/11 x64（Windows 10は実機未確認）、Windows付属の.NET Framework 4.x</dd></dl>
+<p><a href="#notice">開発版の利用について</a></p></section>
+<section><h2>はじめて使う</h2>
+<ol><li>メモ帳のテスト文書にカーソルを置き、Normalを確認します。</li>
+<li>iで入力。左Alt単独で日本語Microsoft IMEを切り替え、変換を確定します。</li>
+<li>F8でNormalに戻り、w/bで日本語の区切りへ移動、編集後にuで元に戻します。</li>
+<li>通知領域の「終了」で停止します。</li></ol>
+<p><a href="support.html">操作・対応アプリ・FAQ</a></p></section></div>
+<section class="kv-history" id="notice"><h2>開発版の利用について</h2>
+<p>kotoVimは個人が開発中のソフトウェアで、現状のまま提供されます。動作、互換性、特定の目的への適合性は保証しません。お使いの環境での利用は、ご自身の判断と責任で行ってください。</p>
+<p>本ソフトウェアの利用または利用できなかったことにより生じた損害について、開発者は適用法令で認められる範囲で責任を負いません。故意または重大な過失による責任など、法令上免責できない責任には、この免責は適用されません。</p></section>
+<section class="kv-history"><h2>更新履歴</h2>
+<p><strong>0.9.0-rc.4</strong> — 小文字の単語操作で日本語の区切りを推定。PowerPointの移動を直接指定し、通知領域のメニューに版名とバージョンを表示。</p>
+<p><strong>0.9.0-rc.2</strong> — 日英を別EXEに分離。単語移動を修正し、diw / ciw / yiw を追加。</p>
+<p><strong>0.9.0-rc.1</strong> — 名称をkotoVimに統一。日英UI、新アイコン、配布ビルドの整備。</p>
+<p><strong>0.8.1</strong> — PowerPointの単語移動と実際の改行を基準にした空行追加。</p></section></main>
+<footer class="footer shell"><p>eto works</p><nav><a href="privacy.html">Privacy</a><a href="licenses.html">Licenses</a><a href="support.html#contact">Contact</a></nav></footer></body></html>
