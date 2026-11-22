@@ -4,10 +4,12 @@
 
 **編集を引き継ぐCodexは [AGENTS.md](AGENTS.md) と [HANDOFF.md](HANDOFF.md) を先に読んでください。** 新しいアプリの追加、Git・公開手順、並行作業の注意、検証方法をまとめています。
 
+アプリ開発・広告・審査申請から続けて作業する場合は、[eto works 共通開発手順](https://github.com/eto-h/eto-works-development-guide) も参照してください。共通資料の閲覧にはGitHubのアクセス権が必要です。
+
 | 対象 | ファイル／公開先 |
 |---|---|
 | 共通トップ | `index.html` → `/` |
-| BEYOND | ルートの `support.html`、`privacy.html`、`licenses.html` |
+| BEYOND | `beyond/index.html` → `/beyond/`、ルートの `support.html`、`privacy.html`、`licenses.html` |
 | ADRIFT | `adrift/index.html`、`support.html`、`privacy.html`、`licenses.html` → `/adrift/` 以下 |
 | 共通スタイル | `site.css`、トップ一覧用 `games.css` |
 | ADRIFTスタイル | `adrift/adrift.css` |
