@@ -6,5 +6,4 @@
 .game-note span { color:#bdc9c3; font-size:.85rem; }
 .adrift-card { background:linear-gradient(0deg,#0c1819f5,#0c181977 58%,#0c181922),url("adrift/assets/AdriftIcon.png") center 45%/cover; }
 .adrift-title { font-size:clamp(3rem,6vw,6rem); font-weight:600; letter-spacing:.13em; margin-bottom:0; line-height:1.2; }
-.eyebrow { color:#dcebb1; font-size:.75rem; letter-spacing:.18em; }
 @media(max-width:760px) { .game-grid { grid-template-columns:1fr; } .game-grid>.hero { min-height:37rem; padding:3rem 1.25rem; } }
