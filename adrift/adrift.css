@@ -1,18 +1,145 @@
+.adrift {
+  --gold: #dcebb1;
+  --night: #0c1819;
+  --panel: #152424;
+  --line: #334342;
+  --muted: #c1cec9;
+}
 
-.adrift { --gold:#dcebb1; --night:#0c1819; --panel:#152424; --line:#334342; --muted:#c1cec9; }
-.skip { position:absolute; left:1rem; top:-6rem; z-index:2; background:var(--night); padding:.6rem; }
-.skip:focus { top:0; }
-.adrift-hero { min-height:38rem; display:flex; align-items:center; padding:4rem 0;
- background:linear-gradient(90deg,#0b1819f2,#0b1819ba 48%,#0b181933),url("assets/AdriftIcon.png") center 50%/cover; }
-.adrift-hero h1 { font-size:clamp(3.8rem,12vw,8.5rem); font-weight:600; letter-spacing:.12em; margin-bottom:1rem; }
-.eyebrow { color:var(--gold); font-size:.75rem; letter-spacing:.18em; }
-.lead { font-size:clamp(1.5rem,3vw,2.3rem); line-height:1.55; }
-.hero-copy>.links { justify-content:flex-start; }
-.hero-copy>p { max-width:28rem; }
-.feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2rem; }
-.feature-grid h3 { color:var(--gold); }
-.adrift .article { padding-top:2.4rem; }
-.adrift .article section:first-of-type { margin-top:1.6rem; }
-@media(max-width:600px) { .adrift-hero { min-height:38rem; background-position:center; align-items:flex-end;
- background-image:linear-gradient(0deg,#0b1819f5,#0b1819bb 35%,#0b181911),url("assets/AdriftIcon.png"); padding-bottom:3rem; }
- .feature-grid { grid-template-columns:1fr; gap:.2rem; } .bar nav { gap:0 1rem; } }
+.adrift .skip {
+  position: absolute;
+  inset: -6rem auto auto 1rem;
+  z-index: 2;
+  padding: .6rem;
+  background: var(--night);
+}
+
+.adrift .skip:focus { top: 0; }
+
+.adrift-hero {
+  display: grid;
+  align-items: center;
+  min-height: clamp(27rem, 60vh, 36rem);
+  padding-block: 4rem;
+  background:
+    linear-gradient(90deg, #0c1819f5, #0c1819b8 48%, #0c181933),
+    url("assets/riverbank-hero.webp") center / cover;
+}
+
+.adrift-hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3.65rem, 12vw, 8rem);
+  font-weight: 570;
+  letter-spacing: .12em;
+  line-height: 1;
+}
+
+.adrift-hero .lead {
+  margin-bottom: .25rem;
+  font-size: clamp(1.28rem, 3.5vw, 2.1rem);
+  line-height: 1.45;
+}
+
+.hero-tagline { color: var(--muted); }
+.hero-copy > .links { justify-content: flex-start; }
+.hero-copy .links a { gap: .25em; }
+.hero-copy .links a:first-child {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #182521;
+}
+.hero-copy .links a:first-child:hover { background: #edf6d0; }
+
+.adrift-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, .52fr);
+  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  padding-block: clamp(2.75rem, 6vw, 5rem);
+}
+
+.adrift-overview h2, .adrift-gallery h2, .adrift-about-en h2 {
+  font-size: clamp(1.5rem, 4.2vw, 2.15rem);
+  line-height: 1.35;
+  font-weight: 550;
+}
+
+.adrift-overview p, .adrift-gallery figcaption { color: var(--muted); }
+.adrift-overview p:last-child { margin-bottom: 0; }
+
+.adrift-availability {
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  background: var(--panel);
+}
+.adrift-availability h3 { margin: 0 0 .4rem; color: var(--gold); }
+.adrift-availability p { margin-bottom: .65rem; }
+.adrift-availability .device-requirements { font-size: .875rem; }
+
+.adrift-gallery {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(2.4rem, 5vw, 4rem);
+}
+
+.adrift-gallery h2 span { color: var(--muted); font-size: .58em; font-weight: 450; }
+.shot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.8rem); }
+.shot-grid figure, .control-shot { margin: 0; min-width: 0; }
+
+.game-shot {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: .7rem;
+  background: var(--panel);
+}
+.game-shot:hover { border-color: var(--gold); }
+.game-shot img { display: block; width: 100%; height: auto; }
+
+.adrift-gallery figcaption, .control-shot figcaption { margin: .55rem 0 0; line-height: 1.5; }
+.adrift-gallery figcaption span { display: block; margin-top: .2rem; font-size: .86rem; }
+.adrift-about-en { border-top: 1px solid var(--line); }
+.adrift .article { padding-top: 2.4rem; }
+.adrift .article section:first-of-type { margin-top: 1.6rem; }
+
+.support-intro h1 { margin-bottom: .6rem; }
+.adrift .support-game-name { margin-bottom: .25rem; color: var(--gold); letter-spacing: .13em; }
+.support-intro > p { margin-bottom: .6rem; }
+.control-guide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(10rem, 14rem); gap: 1.4rem 2rem; }
+.control-steps { margin: 0; padding-inline-start: 1.55rem; }
+.control-steps li + li { margin-top: 1.1rem; }
+.control-steps li::marker { color: var(--gold); font-weight: 650; }
+.control-steps h3 { margin: 0 0 .25rem; color: var(--ink); }
+.control-steps p { margin-bottom: .6rem; }
+.control-shot { max-width: 15rem; }
+.control-shot figcaption { color: var(--muted); font-size: .875rem; }
+.pull-diagram { display: flex; flex-wrap: wrap; gap: .4rem .55rem; }
+.pull-diagram span {
+  display: inline-flex;
+  gap: .45em;
+  align-items: center;
+  padding: .08rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  background: var(--panel);
+}
+.pull-diagram b { color: var(--gold); font-size: 1.22rem; }
+
+@media (max-width: 40rem) {
+  .adrift .bar nav { gap: 0 1rem; }
+  .adrift-hero {
+    min-height: 28rem;
+    align-items: end;
+    padding-block: 3rem;
+    background-image:
+      linear-gradient(0deg, #0c1819fa, #0c1819bd 54%, #0c181930),
+      url("assets/riverbank-hero.webp");
+  }
+  .adrift-overview, .control-guide { grid-template-columns: 1fr; }
+  .shot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 29rem) {
+  .shot-grid { grid-template-columns: minmax(0, 1fr); }
+  .shot-grid figure { max-width: 19rem; margin-inline: auto; width: 100%; }
+}
