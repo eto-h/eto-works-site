@@ -1,5 +1,6 @@
 
-.game-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; }
+.home-catalog { flex:1; }
+.game-grid { display:grid; grid-template-columns:1fr 1fr; }
 .game-grid>.hero { min-height:40rem; padding:4rem 1.7rem; align-items:end; }
 .game-copy { width:min(100%,34rem); margin-inline:auto; text-align:center; }
 .game-note { color:#e1e6e2; margin-top:1.2rem; font-size:.95rem; }
@@ -8,5 +9,20 @@
 .adrift-title { font-size:clamp(3rem,6vw,6rem); font-weight:600; letter-spacing:.13em; margin-bottom:0; line-height:1.2; }
 @media(max-width:760px) { .game-grid { grid-template-columns:1fr; } .game-grid>.hero { min-height:37rem; padding:3rem 1.25rem; } }
 
-.kotovim-home { grid-column:1 / -1; display:flex; gap:1.25rem; align-items:flex-start; justify-content:center; padding:2rem 1.25rem; border-block-start:1px solid var(--line); }
-.kotovim-home h2, .kotovim-home p { margin:0 0 .35rem; }
+.tools-home { padding-block:clamp(2.4rem,5vw,4.5rem); }
+.tools-home>h2 { margin:0 0 .85rem; font-size:1.1rem; font-weight:600; letter-spacing:.09em; }
+.kotovim-home { position:relative; display:grid; min-height:23rem; align-items:center; isolation:isolate; overflow:hidden; border:1px solid var(--line); border-radius:.35rem; background:#100e20; }
+.kotovim-cover { position:absolute; z-index:-2; width:100%; height:100%; object-fit:cover; object-position:center; }
+.kotovim-home::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#100e20e8,#100e2080 32%,transparent 62%); }
+.kotovim-copy { padding:clamp(1.5rem,5vw,3.6rem); }
+.kotovim-copy h3 { margin:0 0 .45rem; line-height:1.1; font-size:clamp(2.3rem,5vw,4rem); }
+.kotovim-copy p { margin:0 0 1.2rem; }
+.kotovim-copy p span { color:var(--muted); font-size:.9rem; }
+.kotovim-copy a { display:inline-flex; align-items:center; min-height:44px; padding:.4rem .95rem; border:1px solid #9b7d55; border-radius:.2rem; background:#0b0f19d9; text-decoration:none; }
+.kotovim-copy a:hover { background:#202838; }
+@media(max-width:660px) {
+  .kotovim-home { min-height:0; }
+  .kotovim-cover { position:static; height:auto; aspect-ratio:2/1; object-position:right center; }
+  .kotovim-home::before { display:none; }
+  .kotovim-copy { padding:1.4rem; }
+}
