@@ -5,24 +5,8 @@
 <main class="shell">
 <section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">その編集、何キーでできる？</p>
 <p>AIに下書きを任せても、最後のひと言を整えるのは自分。単語へ飛び、数キーで書き換える。魔法のように見えるVimの操作を、いつものWordやOutlookで試してみませんか。</p>
-<div class="kv-actions"><a class="kv-button" href="#demos">比較デモを見る</a><a href="#download">配布状況</a></div></div>
+<div class="kv-actions"><a class="kv-button" href="#golf-title">Vimゴルフを試す</a><a href="#download">配布状況</a></div></div>
 <figure class="kv-editor"><figcaption>日本語の単語移動の例</figcaption><div class="kv-paper" lang="ja"><span>日本語を</span>読む。次の文。</div><div class="kv-mode"><strong>NORMAL</strong><span><kbd>w</kbd> / <kbd>b</kbd></span></div></figure></section>
-<section class="kv-demos" id="demos" aria-labelledby="demo-title">
-<h2 id="demo-title">同じ文章、ふたつの編集ルート</h2>
-<p>左はマウスとキーボード、右はkotoVim。カーソルと選択範囲、画面に出るキーを追ってみてください。操作を再現したデモです。</p>
-<article class="kv-demo" id="demo-word">
-<header><h3>Word</h3><p>会議の日と、資料の案内を直す</p></header>
-<video controls playsinline preload="none" width="1200" height="676" poster="media/word-ja.webp" aria-label="Wordの通常操作とkotoVimの比較動画">
-<source src="media/word-ja.mp4" type="video/mp4"><a href="media/word-ja.mp4">Wordの比較動画を開く</a></video>
-<p><kbd>gg</kbd> で先頭へ、<kbd>w</kbd> で変更箇所へ移動。<kbd>cw</kbd> で日付を変え、<kbd>G</kbd> と <kbd>cc</kbd> で最後の行を書き換えます。</p>
-</article>
-<article class="kv-demo" id="demo-outlook">
-<header><h3>Outlook</h3><p>送信前のメールで、共有日を変えて前置きを削る</p></header>
-<video controls playsinline preload="none" width="1200" height="676" poster="media/outlook-ja.webp" aria-label="Outlookの通常操作とkotoVimの比較動画">
-<source src="media/outlook-ja.mp4" type="video/mp4"><a href="media/outlook-ja.mp4">Outlookの比較動画を開く</a></video>
-<p>カーソルが単語の途中にあっても <kbd>ciw</kbd> で全体を書き換えられます。最後の行では <kbd>v4l</kbd> で4文字を選び、<kbd>d</kbd> で削除します。</p>
-</article>
-</section>
 <section class="kv-golf" aria-labelledby="golf-title">
 <div><h2 id="golf-title">ミニVimゴルフ</h2>
 <p>ゴールは同じ。遠回りを省いて、何キーで編集できるか考えるのがVimゴルフです。まずは単語一つから。</p></div>
