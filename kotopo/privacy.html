@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>プライバシー | kotopo | eto works</title>
+  <meta name="description" content="kotopoによるキーボード入力の処理、速度設定の保存、削除方法。">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="kotopo.css">
+</head>
+<body class="kotopo">
+<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotopo"><a href="./">kotopo</a><a href="support.html">操作ガイド</a><a href="#en" lang="en">English</a></nav></header>
+<main class="article">
+  <h1>プライバシー</h1><p>Windows版 kotopo（KotoPointer v0.6.0）のデータの扱いについて。</p>
+  <section><h2>キーボード入力とクリック候補</h2><p>常駐中は操作モードの切り替えとキー操作を検出するため、Windowsのキーボードフックを使います。英字ヒントを開くと、Windows UI Automationで手前のウィンドウの操作対象と位置を取得します。これらは端末内で処理し、キー入力の履歴やクリック候補をファイルに記録したり、開発者へ送ったりしません。</p></section>
+  <section><h2>保存する設定</h2><p>選んだ移動速度を <code>%LOCALAPPDATA%\KotoPointer\speed.txt</code> に保存します。初期値に戻すには、通知領域からアプリを終了し、このファイルを削除してください。</p></section>
+  <section><h2>外部サービス</h2><p>アプリには広告・利用状況解析用のSDKを組み込んでいません。配布にはGitHubを利用します。サイトへのアクセスとダウンロードには <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシー声明</a> が適用されます。</p></section>
+  <section id="en" lang="en"><h2>Privacy</h2><p>The app processes keyboard shortcuts and accessible controls in the active window on your PC. It does not log keystrokes or send click targets to the developer. Only the selected pointer speed is saved. Quit the app and delete the settings file shown above to reset it. The app includes no advertising or analytics SDKs. GitHub hosts the download.</p><a href="support.html#contact">Contact</a></section>
+</main>
+<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報"><a href="privacy.html" aria-current="page">Privacy</a><a href="licenses.html">Licenses</a><a href="support.html#contact">Contact</a></nav></footer>
+</body>
+</html>

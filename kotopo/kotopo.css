@@ -1,0 +1,43 @@
+.kotopo { --hint: #a4f4cf; --grid: #416565; }
+.kotopo a { color: var(--hint); }
+.kotopo .brand { color: var(--ink); }
+.kotopo .kp-main { padding-bottom: 4rem; }
+.kotopo .kp-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); padding-block: clamp(3rem, 8vw, 6.5rem); }
+.kotopo .kp-hero h1 { font-size: clamp(3.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: -.065em; }
+.kotopo .platform { color: var(--hint); font: 600 .85rem/1.4 system-ui, sans-serif; letter-spacing: .08em; }
+.kotopo .lead { margin: 1rem 0; font-size: clamp(1.5rem, 3.2vw, 2.35rem); font-weight: 650; line-height: 1.5; }
+.kotopo .download { display: inline-flex; gap: .7em; align-items: center; background: var(--hint); color: #102425; padding: .7rem 1.15rem; border-radius: .35rem; text-decoration: none; font-weight: 700; }
+.kotopo .file { color: var(--muted); font-size: .85rem; margin: .7rem 0 0; }
+.kotopo .demo { margin: 0; padding: clamp(1rem, 3vw, 1.7rem); border: 1px solid var(--grid); border-radius: .65rem; background: #102021; }
+.kotopo .demo figcaption { font-weight: 650; margin-bottom: 1rem; }
+.kotopo .board { position: relative; aspect-ratio: 8 / 5; overflow: hidden; border: 1px solid var(--grid); border-radius: .25rem; background: repeating-linear-gradient(0deg, transparent 0 19px, #294143 19px 20px), repeating-linear-gradient(90deg, #132a2a 0 19px, #294143 19px 20px); }
+.kotopo .selection { position: absolute; inset: 0 auto auto 0; width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; outline: 2px solid var(--hint); outline-offset: -2px; background: #163535; }
+.kotopo .selection span { display: grid; place-items: center; border: 1px solid var(--grid); font: 650 clamp(.9rem, 2.5vw, 1.6rem)/1 monospace; color: var(--hint); }
+.kotopo .selection[data-depth="2"] span { font-size: .7rem; }
+.kotopo .selection[data-depth="3"] { background: var(--hint); }
+.kotopo .selection[data-depth="3"] span { visibility: hidden; }
+.kotopo .demo p, .kotopo .demo output { display: block; margin: .8rem 0 0; font-size: .86rem; color: #c9d8d3; }
+.kotopo .demo [hidden] { display: none; }
+.kotopo .demo-controls:not([hidden]) { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
+.kotopo .demo button { min-width: 2.75rem; min-height: 2.75rem; border-radius: .3rem; background: #223b3a; border: 1px solid #5e8581; color: #eafff8; cursor: pointer; }
+.kotopo .demo button:focus-visible { outline: 2px solid var(--hint); outline-offset: 2px; }
+.kotopo .demo button:disabled { opacity: .55; cursor: default; }
+.kotopo .demo .reset { margin-left: auto; }
+.kotopo .guide-section { border-top: 1px solid var(--line); padding-block: 2rem; }
+.kotopo .guide-section h2 { margin-bottom: .7rem; }
+.kotopo .guide-section p, .kotopo .guide-section ol { max-width: 52rem; }
+.kotopo .guide-section ol { padding-left: 1.65rem; }
+.kotopo .guide-section li { padding: .25rem 0; }
+.kotopo kbd { display: inline-block; padding: 0 .35rem; background: #1b2d30; color: #ccf5e2; border: 1px solid #455b5e; border-radius: .2rem; }
+.kotopo .article h2, .kotopo .keys dt { color: var(--hint); }
+.kotopo .keys { display: grid; grid-template-columns: max-content 1fr; gap: 0 1.2rem; }
+.kotopo .keys dt, .kotopo .keys dd { border-bottom: 1px solid var(--line); margin: 0; padding-block: .75rem; }
+.kotopo .keys dt { font-weight: 650; }
+@media (max-width: 750px) {
+  .kotopo .kp-hero { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .kotopo .keys { display: block; }
+  .kotopo .keys dt { border-bottom: 0; padding-bottom: 0; }
+  .kotopo .keys dd { padding-top: .2rem; }
+}
