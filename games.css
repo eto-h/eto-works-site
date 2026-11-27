@@ -30,3 +30,7 @@
   .kotovim-home::before { display:none; }
   .kotovim-copy { padding:1.4rem; }
 }
+
+.kotodo-home { display:grid; grid-template-columns:1fr auto; align-items:center; margin-top:1rem; border:1px solid #595065; border-radius:.35rem; background:radial-gradient(ellipse at right bottom,#233f43,transparent 65%),#231e32; }
+.kotodo-cue { margin-right:clamp(1rem,5vw,4rem); padding:.55em .9em; border-left:3px solid #7ef2ca; border-radius:.35em; color:#f4f0f9; background:#201b2fdf; font-weight:650; }
+@media(max-width:660px) { .kotodo-home { grid-template-columns:1fr; } .kotodo-cue { display:none; } }
