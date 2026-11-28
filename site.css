@@ -13,6 +13,29 @@
 body { margin: 0; color: var(--ink); background: var(--night); line-height: 1.75; }
 a { color: var(--gold); text-underline-offset: .26em; }
 a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+.product-download { margin-top: 1.25rem; }
+.download-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1rem; }
+.download-actions .download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: .75rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: .45rem;
+  background: #a4f4cf;
+  color: #102425;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.download-actions .download-button:hover { background: #c6f9e2; }
+.download-actions .download-alternative { display: inline-flex; align-items: center; min-height: 44px; color: #a4f4cf; }
+.product-download a:focus-visible { outline: 2px solid #a4f4cf; outline-offset: 4px; }
+.product-download .download-details { margin: .65rem 0 0; color: var(--muted); font-size: .85rem; }
+.download-details a { color: inherit; }
 .shell { width: min(100% - 2.5rem, 69rem); margin-inline: auto; }
 .bar, .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .3rem 2rem; }
 .bar { padding-block: 1.05rem; border-bottom: 1px solid var(--line); }

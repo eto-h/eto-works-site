@@ -9,8 +9,6 @@
 .kotopo .kp-hero h1 { font-size: clamp(3.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: -.065em; }
 .kotopo .platform { color: var(--hint); font: 600 .85rem/1.4 system-ui, sans-serif; letter-spacing: .08em; }
 .kotopo .lead { margin: 1rem 0; font-size: clamp(1.5rem, 3.2vw, 2.35rem); font-weight: 650; line-height: 1.5; }
-.kotopo .download { display: inline-flex; gap: .7em; align-items: center; background: var(--hint); color: #102425; padding: .7rem 1.15rem; border-radius: .35rem; text-decoration: none; font-weight: 700; }
-.kotopo .file { color: var(--muted); font-size: .85rem; margin: .7rem 0 0; }
 .kotopo .demo { margin: 0; padding: clamp(1rem, 3vw, 1.7rem); border: 1px solid var(--grid); border-radius: .65rem; background: #102021; }
 .kotopo .demo figcaption { font-weight: 650; margin-bottom: 1rem; }
 .kotopo .board { position: relative; aspect-ratio: 8 / 5; overflow: hidden; border: 1px solid var(--grid); border-radius: .25rem; background: repeating-linear-gradient(0deg, transparent 0 19px, #294143 19px 20px), repeating-linear-gradient(90deg, #132a2a 0 19px, #294143 19px 20px); }
