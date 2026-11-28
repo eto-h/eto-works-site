@@ -4,8 +4,6 @@
 .intro h1 { margin: 0; font-size: clamp(4rem, 8vw, 6.8rem); letter-spacing: -.065em; }
 .lead { margin: 1.1rem 0 .8rem; font-size: clamp(1.5rem, 3vw, 2.15rem); font-weight: 650; line-height: 1.45; }
 .summary { color: #d0cbd7; }
-.download { display: inline-flex; align-items: center; gap: 1em; padding: .7rem 1.15rem; background: var(--mint); color: #112622; text-decoration: none; border-radius: .35rem; font-weight: 700; }
-.download:hover { background: #adf7e0; }
 .detail, figcaption { color: var(--muted); font-size: .82rem; }
 .detail { margin: .55rem 0 0; }
 figure { min-width: 0; margin: 0; }

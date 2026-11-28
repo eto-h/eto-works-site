@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>kotoq（コトク） — 今やることを画面に表示 | eto works</title>
+  <meta name="description" content="アプリを切り替えたとき、今やることをひとこと表示。kotoq（コトク）は Windows 用の無料の集中アプリです。">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="kotoq.css">
+</head>
+<body>
+<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoq"><a href="./" aria-current="page">kotoq</a><a href="#guide">使い方</a><a href="#en" lang="en">English</a></nav></header>
+<main class="shell">
+  <section class="intro">
+    <div>
+      <p class="platform" lang="en">Windows · v1.4.0</p>
+      <h1>kotoq</h1>
+      <p class="lead">今やることを、<br>ひとこと画面に。</p>
+      <p class="summary">kotoq（コトク）は、画面を切り替えた瞬間に、書いておいた一行を表示します。作業の手を止めずに、次にやることを思い出せます。</p>
+      <p><a href="../download/?product=kotoq">Windows 版の配布案内・利用規約</a></p>
+      <p class="detail">kotoq.exe · .NET Framework 4.8</p>
+    </div>
+    <figure><a href="settings.png"><img src="settings.png" alt="kotoq の設定画面。集中タスクのプレビューと、表示用フォントを選ぶ4つの書体見本。" width="1000" height="710"></a><figcaption>設定画面 <span>画像をクリックして拡大</span></figcaption></figure>
+  </section>
+  <section class="guide" id="guide">
+    <h2>使い方</h2>
+    <ol>
+      <li><strong>集中タスクを選ぶ</strong><p>画面右上で言語（日本語・English・简体中文・한국어・Español）を切り替えられます。「集中タスク」の枠を選び、作業を160文字以内で入力します。5件まで登録でき、選んだ1件が表示されます。</p></li>
+      <li><strong>見える場所を決める</strong><p>「外観」で表示先をメイン・サブ・両方から選びます。9か所から表示位置を選び、「タスクのフォント」で表示言語に合う書体を選びます。候補は PC に入っている書体に応じて変わり、選択は言語ごとに保存されます。文字色やサイズ、不透明度も調整できます。「画面に試し表示」で確認できます。サブが未接続ならメインに、サブが複数あれば「サブ」でそのすべてに表示します。</p></li>
+      <li><strong>集中を開始する</strong><p>「タイミング」で、アプリ切り替え時・一定間隔・常時表示から選びます。「集中を開始」を押すと設定画面が閉じます。通知領域のアイコンから設定を開くと、集中中も登録済みのタスクに切り替えられます。</p></li>
+    </ol>
+  </section>
+  <section class="notes"><h2>更新通知</h2><p>kotoq は起動時と起動中の24時間ごとに公式サイトの公開版番号を確認します。新しい版があると設定画面に「ダウンロードページへ」が表示されます。通知領域で動作中は Windows 通知からも案内を開けます。</p></section>
+  <section class="notes"><h2>タスクと設定の保存</h2><p>入力した内容と設定はこの PC の <code>%LOCALAPPDATA%\kotodo\settings.xml</code> に保存します。旧版の kotodo をお使いの方は、5件のタスク、選択中の枠、外観設定をそのまま使えます。初期版で登録した1件のタスクは1番の枠に引き継ぎます。</p></section>
+  <section class="notes" id="en" lang="en"><h2>Quick start</h2><p>Run kotoq.exe on Windows with .NET Framework 4.8. Use the top-right menu to select English, Japanese, Simplified Chinese, Korean, or Spanish. You can choose a task font for each language under Appearance. Save up to five tasks and select one. Choose the primary display, secondary displays, or both, then select “Start focus” to start. Your reminder appears over other apps and lets clicks pass through. Open kotoq from the system tray to change settings or end the session.</p><a href="../download/en.html?product=kotoq">Free Windows download</a></section>
+</main>
+<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報"><a href="../#tools">ツール一覧</a><a href="../download/privacy.html">Download privacy</a></nav></footer>
+</body>
+</html>

@@ -33,6 +33,14 @@
     document.querySelector('meta[name="description"]').content =
       strings[document.body.dataset.description].replace(/[\[\]]/g, "");
     for (const link of document.querySelectorAll("a[href]")) {
+      if (link.hasAttribute("data-download")) {
+        link.href = (language === "ja" ? "../download/" : "../download/en.html") + "?product=kotopo";
+        continue;
+      }
+      if (link.hasAttribute("data-download-privacy")) {
+        link.href = "../download/privacy.html" + (language === "ja" ? "" : "#en");
+        continue;
+      }
       const target = new URL(link.href);
       if (target.origin !== location.origin || !target.pathname.startsWith("/kotopo/")) continue;
       target.searchParams.set("lang", language);
