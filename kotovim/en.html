@@ -5,10 +5,12 @@
 <main class="shell">
 <section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">Vim-style editing in the text fields you already use.</p>
 <p>AI can draft the text. The finishing touches are yours. Jump to the word you want and rewrite it with a few keystrokes. Try the editing tricks that make Vim look like magic, right in Word and Outlook.</p>
+<p>Standard and Lite are built for Japanese text, even when words run together without spaces. Use <kbd>w</kbd> to move by word, <kbd>]b</kbd> to jump to the next <em>bunsetsu</em> phrase, <kbd>viP</kbd> to select a phrase, or <kbd>ciP</kbd> to rewrite it.</p>
 <div class="product-download" id="download">
   <ul class="download-actions kv-editions">
     <li><a class="download-button" href="../download/en.html?product=kotovim-standard">Standard download and terms</a></li>
     <li><a class="download-button" href="../download/en.html?product=kotovim-lite">Lite download and terms</a></li>
+    <li><a class="download-button" href="../download/en.html?product=kotovim-english">English edition download and terms</a></li>
   </ul>
   <p class="download-details"><a href="#editions">Compare editions and system requirements</a></p>
 </div></div>
@@ -16,11 +18,12 @@
 <div class="kv-sections">
 <section id="editions"><h2>Editions and system requirements</h2>
 <dl class="kv-meta">
-<dt>Development build</dt><dd>0.9.0-rc.23 · 2026-11-28</dd>
+<dt>Standard and Lite build</dt><dd>0.9.0-rc.23 · 2026-11-28</dd>
 <dt>Standard</dt><dd><code>kotoVim.exe</code> (673 KiB). Uses Vaporetto for Japanese word segmentation.</dd>
 <dt>Lite</dt><dd><code>kotoVim_lite.exe</code> (158 KiB). Uses TinySegmenter for Japanese word segmentation.</dd>
+<dt>English</dt><dd><code>kotoVim-en.exe</code> (132 KiB) · 0.9.0-rc.24 · 2026-11-29. Includes English word motions and editing commands such as <kbd>viw</kbd> and <kbd>ciw</kbd>. Japanese word and phrase segmentation and the Japanese IME shortcut are omitted.</dd>
 <dt>Target platform</dt><dd>Windows 10/11 x64 with the .NET Framework 4.x supplied by Windows. Windows 10 has yet to be tested hands-on.</dd></dl>
-<p>Both editions run as standalone executables and share the same editing commands. Japanese word and phrase boundaries can vary by edition.</p>
+<p>All editions run as standalone executables. Standard and Lite share the same Japanese editing commands. Their word and phrase boundaries can differ.</p>
 <p><a href="#notice">Using the development build</a></p></section>
 <section><h2>Get started</h2>
 <ol><li>Click inside a sample document in Notepad and check that Normal appears.</li>
@@ -33,6 +36,7 @@
 <p>kotoVim is an independently developed work in progress and is provided as is. The developer makes no guarantees about operation, compatibility, or fitness for a particular purpose. Use the software at your own discretion and risk.</p>
 <p>To the extent permitted by applicable law, the developer is not liable for damage arising from use of or inability to use the software. This limitation does not apply to liability that cannot lawfully be excluded, including liability for intentional misconduct or gross negligence where applicable.</p></section>
 <section class="kv-history"><h2>Release history</h2>
+<p><strong>0.9.0-rc.24</strong> — Added the English edition with <kbd>viw</kbd> for whole-word selection.</p>
 <p><strong>0.9.0-rc.23</strong> — Improved HTTPS compatibility for update checks from the portable executable.</p>
 <p><strong>0.9.0-rc.22</strong> — Added update notices and a link to downloads from the notification or tray menu.</p>
 <p><strong>0.9.0-rc.20</strong> — Standard and Lite editions share the same editing commands.</p>

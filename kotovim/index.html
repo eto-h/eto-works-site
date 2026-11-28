@@ -5,10 +5,12 @@
 <main class="shell">
 <section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">いつもの入力欄で、Vim風の編集。</p>
 <p>AIに下書きを任せても、最後のひと言を整えるのは自分。単語へ飛び、数キーで書き換える。魔法のように見えるVimの操作を、いつものWordやOutlookで試してみませんか。</p>
+<p>標準版とLite版は、空白のない日本語の編集が得意です。漢字とかなが混じる文章でも、<kbd>w</kbd> で単語へ、<kbd>]b</kbd> で次の文節へ移動。<kbd>viP</kbd> で文節を選び、<kbd>ciP</kbd> で文節ごと書き換えられます。</p>
 <div class="product-download" id="download">
   <ul class="download-actions kv-editions">
     <li><a class="download-button" href="../download/?product=kotovim-standard">標準版の配布案内・利用規約</a></li>
     <li><a class="download-button" href="../download/?product=kotovim-lite">Lite 版の配布案内・利用規約</a></li>
+    <li><a class="download-button" href="../download/?product=kotovim-english">英語専用版の配布案内・利用規約</a></li>
   </ul>
   <p class="download-details"><a href="#editions">標準版と Lite 版の違い・動作環境</a></p>
 </div></div>
@@ -16,11 +18,12 @@
 <div class="kv-sections">
 <section id="editions"><h2>標準版と Lite 版の違い・動作環境</h2>
 <dl class="kv-meta">
-<dt>開発版</dt><dd>0.9.0-rc.23 · 2026-11-28</dd>
+<dt>標準版とLite版</dt><dd>0.9.0-rc.23 · 2026-11-28</dd>
 <dt>標準版</dt><dd><code>kotoVim.exe</code>（673 KiB）。日本語の単語分割にVaporettoを使用。</dd>
 <dt>Lite版</dt><dd><code>kotoVim_lite.exe</code>（158 KiB）。日本語の単語分割にTinySegmenterを使用。</dd>
+<dt>英語専用版</dt><dd><code>kotoVim-en.exe</code>（132 KiB）· 0.9.0-rc.24 · 2026-11-29。英語の単語移動や <kbd>viw</kbd>、<kbd>ciw</kbd> などの編集に対応。日本語の単語・文節解析とIME切り替えは含まれません。</dd>
 <dt>対象環境</dt><dd>Windows 10/11 x64（Windows 10は実機未確認）、Windows付属の.NET Framework 4.x</dd></dl>
-<p>どちらもインストール不要の単体EXEで、同じ編集コマンドを使えます。日本語の単語や文節の区切りは版によって異なることがあります。</p>
+<p>すべてインストール不要の単体EXEです。標準版とLite版は同じ日本語編集コマンドを備え、単語や文節の区切りは版によって異なることがあります。</p>
 <p><a href="#notice">開発版の利用について</a></p></section>
 <section><h2>はじめて使う</h2>
 <ol><li>メモ帳の本文をクリックし、Normalと表示されることを確認します。</li>
@@ -33,6 +36,7 @@
 <p>kotoVimは個人が開発中のソフトウェアで、現状のまま提供されます。動作、互換性、特定の目的への適合性は保証しません。お使いの環境での利用は、ご自身の判断と責任で行ってください。</p>
 <p>本ソフトウェアの利用または利用できなかったことにより生じた損害について、開発者は適用法令で認められる範囲で責任を負いません。故意または重大な過失による責任など、法令上免責できない責任には、この免責は適用されません。</p></section>
 <section class="kv-history"><h2>更新履歴</h2>
+<p><strong>0.9.0-rc.24</strong> — 英語専用版を追加。<kbd>viw</kbd> で単語全体を選択できます。</p>
 <p><strong>0.9.0-rc.23</strong> — 単体EXEからの更新確認でHTTPS接続の互換性を改善。</p>
 <p><strong>0.9.0-rc.22</strong> — 更新通知を追加。通知や常駐メニューからダウンロード欄を開けます。</p>
 <p><strong>0.9.0-rc.20</strong> — 標準版とLite版で編集コマンドを統一。</p>

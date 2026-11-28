@@ -4,7 +4,7 @@
 <body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="#english" lang="en">English</a></nav></header>
 <main class="article kv-guide">
 <h1>kotoVim 操作ガイド</h1>
-<p>0.9.0-rc.23の標準版とLite版に対応しています。文書全体を対象とする操作の範囲は、編集中の入力欄によって決まります。</p>
+<p>標準版・Lite版の0.9.0-rc.23と、英語専用版の0.9.0-rc.24に対応しています。日本語の単語・文節解析とIME切り替えは標準版・Lite版の機能です。文書全体の操作は、編集中の入力欄の範囲で実行されます。</p>
 <section><h2>操作一覧</h2>
 <div class="kv-search" hidden><label>操作を検索 <input type="search" data-filter autocomplete="off"></label></div>
 <div class="kv-table"><table>
@@ -18,7 +18,7 @@
 <tr><th scope="row"><code>( / ) / d) c) y)</code></th><td>前・次の文の先頭へ移動。日本語の <code>。</code> <code>！</code> <code>？</code> に対応。<code>d)</code> などで次の文の直前まで編集。</td></tr>
 <tr><th scope="row"><code>f / t / df / dt</code></th><td>同じ行で次に現れる文字へ移動し、<code>t</code> はその手前で止まる。<code>df</code> は対象文字を含めて削除、<code>dt</code> は対象文字を残す。</td></tr>
 <tr><th scope="row"><code>dw cw / de dE / dW</code></th><td>カーソル位置から移動先まで削除・変更。<code>de</code> と <code>dE</code> は移動先の単語末を含めて削除。<code>cw</code> は変更後にInsertへ移る。</td></tr>
-<tr><th scope="row"><code>diw ciw yiw</code></th><td>カーソルが内側にある単語全体を削除・変更・コピー。</td></tr>
+<tr><th scope="row"><code>viw diw ciw yiw</code></th><td>カーソルが内側にある単語全体を選択・削除・変更・コピー。</td></tr>
 <tr><th scope="row"><code>D d$ / C c$ / A</code></th><td>行末まで削除、行末まで消してInsert、行末でInsert。</td></tr>
 <tr><th scope="row"><code>dd yy / p P / o O</code></th><td>行を削除・コピー。行単位でコピーした内容は <code>p</code> で下、<code>P</code> で上に貼り付け。<code>o</code> / <code>O</code> は下／上に行を作ってInsert。</td></tr>
 <tr><th scope="row"><code>dG cG yG</code></th><td>現在行から編集中の欄の末尾まで、行単位で削除・変更・コピー。</td></tr>
@@ -50,25 +50,25 @@
 <p>通知領域の「更新」から「更新を確認」を選べます。既定では起動の15秒後と、起動中は24時間ごとに一般公開版を確認します。新しい版の通知をクリックすると<a href="./#download">ダウンロード欄</a>が開きます。同じ版の通知は一度です。「更新を自動で確認して通知」のチェックを外すと自動確認を停止できます。</p>
 <h3>ファイルを確認するには？</h3>
 <pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
-<p>Lite版はファイル名を <code>kotoVim_lite.exe</code> に変えて実行します。入手したテスト版の <code>SHA256.txt</code> に掲載されている値と照合します。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
+<p>Lite版は <code>kotoVim_lite.exe</code>、英語専用版は <code>kotoVim-en.exe</code> を指定します。結果をダウンロード直前のETO Worksページに表示されるSHA-256と照合してください。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
 <h3>Normalに切り替わらないときは？</h3>
 <p>通知領域で起動とバージョンを確認し、書き込み可能な欄をクリックします。IMEで変換中の文字があれば確定してから <kbd>F8</kbd> を試してください。パスワードや読み取り専用欄は対象外です。必要に応じて通知領域で一時停止できます。</p>
 </section>
 <section id="english" lang="en"><h2>Commands</h2>
-<p>This guide covers the Standard and Lite editions of 0.9.0-rc.23. Document-level commands operate within the active editable field.</p>
+<p>This guide covers Standard and Lite 0.9.0-rc.23 and English 0.9.0-rc.24. Japanese word and bunsetsu phrase segmentation and the IME toggle are available in Standard and Lite. Document-level commands operate within the active editable field.</p>
 <div class="kv-search" hidden><label>Filter commands <input type="search" data-filter autocomplete="off"></label></div>
 <div class="kv-table"><table>
 <thead><tr><th scope="col">Keys</th><th scope="col">Behavior</th></tr></thead>
 <tbody>
 <tr><th scope="row"><code>i / v / Esc / Ctrl+[ / F8</code></th><td>Enter Insert with <code>i</code> or Visual with <code>v</code>. Return to Normal with <code>Esc</code>, <code>Ctrl+[</code>, or <code>F8</code>.</td></tr>
 <tr><th scope="row"><code>h j k l / 0 $ / gg G</code></th><td>Move left, down, up, or right, to either end of the line, or to the start or end of the active field.</td></tr>
-<tr><th scope="row"><code>w b e ge / 3w</code></th><td>Move to the next word start, previous word start, word end, or previous word end. <code>3w</code> applies the motion three times. Japanese words are supported.</td></tr>
+<tr><th scope="row"><code>w b e ge / 3w</code></th><td>Move to the next word start, previous word start, word end, or previous word end. <code>3w</code> applies the motion three times. Standard and Lite also recognize Japanese words.</td></tr>
 <tr><th scope="row"><code>W B E gE</code></th><td>Move by groups of non-whitespace characters, including punctuation in the same group.</td></tr>
-<tr><th scope="row"><code>[b / ]b / viP diP ciP yiP</code></th><td>Jump to the previous or next Japanese phrase start. Use kotoVim’s <code>iP</code> text object to select, delete, change, or yank a phrase.</td></tr>
+<tr><th scope="row"><code>[b / ]b / viP diP ciP yiP</code></th><td>In Standard and Lite, jump to the previous or next Japanese phrase start. Use the <code>iP</code> text object to select, delete, change, or yank a phrase.</td></tr>
 <tr><th scope="row"><code>( / ) / d) c) y)</code></th><td>Move to the previous or next sentence start, including sentences ending with <code>。</code>, <code>！</code>, or <code>？</code>. Use <code>d)</code>, <code>c)</code>, or <code>y)</code> to act on text up to the next sentence.</td></tr>
 <tr><th scope="row"><code>f / t / df / dt</code></th><td>Find the next occurrence of a character on the current line. <code>t</code> stops just before it. <code>df</code> deletes through the target and <code>dt</code> stops before it.</td></tr>
 <tr><th scope="row"><code>dw cw / de dE / dW</code></th><td>Delete or change text from the caret using a motion. <code>de</code> and <code>dE</code> include the final character of the word or WORD. <code>cw</code> enters Insert.</td></tr>
-<tr><th scope="row"><code>diw ciw yiw</code></th><td>Delete, change, or yank the whole word under the caret.</td></tr>
+<tr><th scope="row"><code>viw diw ciw yiw</code></th><td>Select, delete, change, or yank the whole word under the caret.</td></tr>
 <tr><th scope="row"><code>D d$ / C c$ / A</code></th><td>Delete to the end of the line, change to the end of the line, or enter Insert at the line end.</td></tr>
 <tr><th scope="row"><code>dd yy / p P / o O</code></th><td>Delete or yank a line. Paste linewise text below with <code>p</code> or above with <code>P</code>. <code>o</code> / <code>O</code> open a line below or above and enter Insert.</td></tr>
 <tr><th scope="row"><code>dG cG yG</code></th><td>Delete, change, or yank whole lines from the current line to the end of the active field.</td></tr>
@@ -82,7 +82,7 @@
 <pre><code id="sample-en">alpha  beta, gamma</code></pre>
 <button type="button" class="kv-copy-example" data-copy="sample-en" data-done="Copied" data-error="Select the text to copy it." hidden>Copy example</button><span aria-live="polite"></span>
 <h3>IME and mode indicator</h3>
-<p>Tap left Alt in Insert or a replacement dialog to toggle the Microsoft Japanese IME. The tray menu lets you turn this shortcut on or off and optionally map <kbd>Ctrl+J</kbd> / <kbd>Ctrl+M</kbd> to Enter.</p>
+<p>In Standard and Lite, tap left Alt in Insert or a replacement dialog to toggle the Microsoft Japanese IME. The tray menu lets you turn that shortcut on or off. Any edition can optionally map <kbd>Ctrl+J</kbd> / <kbd>Ctrl+M</kbd> to Enter.</p>
 <p>In the tray menu, choose Detailed, Compact, Badge (N / I / V), or Hidden under Mode indicator. Select Below the app or Near the caret under Indicator position.</p>
 <h3>Using kotoVim in different apps</h3>
 <ul>
@@ -98,7 +98,7 @@
 <p>Open Updates in the tray and select Check for updates. By default, kotoVim checks for public releases 15 seconds after startup and once every 24 hours while running. Click the notice to open the <a href="en.html#download">downloads section</a>. Each version is announced once. Uncheck Automatically check and notify to turn these checks off.</p>
 <h3>How do I verify the file?</h3>
 <pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
-<p>Use <code>kotoVim_lite.exe</code> in the command for the Lite edition. Compare the result with the matching value in the test release’s <code>SHA256.txt</code>. If blocked, use the approved Windows or workplace review process.</p>
+<p>Use <code>kotoVim_lite.exe</code> for Lite or <code>kotoVim-en.exe</code> for English. Compare the result with the SHA-256 shown on the final ETO Works download screen. If blocked, use the approved Windows or workplace review process.</p>
 <h3>Why does Normal mode not activate?</h3>
 <p>Check that kotoVim is running and verify its version in the tray. Click an editable field, confirm any IME composition, and try <kbd>F8</kbd>. Password and read-only fields are excluded. Use Pause in the tray when needed.</p>
 </section>
