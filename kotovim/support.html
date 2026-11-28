@@ -4,7 +4,7 @@
 <body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="#english" lang="en">English</a></nav></header>
 <main class="article kv-guide">
 <h1>kotoVim 操作ガイド</h1>
-<p>0.9.0-rc.20の標準版とLite版に対応しています。文書全体を対象とする操作の範囲は、編集中の入力欄によって決まります。</p>
+<p>0.9.0-rc.22の標準版とLite版に対応しています。文書全体を対象とする操作の範囲は、編集中の入力欄によって決まります。</p>
 <section><h2>操作一覧</h2>
 <div class="kv-search" hidden><label>操作を検索 <input type="search" data-filter autocomplete="off"></label></div>
 <div class="kv-table"><table>
@@ -46,6 +46,8 @@
 <p>Office全アプリでの最新版の通し試験と、Windows 10実機での確認は未実施です。</p>
 </section>
 <section id="verify"><h2>確認とFAQ</h2>
+<h3>新しいバージョンを確認するには？</h3>
+<p>通知領域の「更新」から「更新を確認」を選べます。既定では起動の15秒後と、起動中は24時間ごとに一般公開版を確認します。新しい版の通知をクリックすると<a href="./#download">ダウンロード欄</a>が開きます。同じ版の通知は一度です。「更新を自動で確認して通知」のチェックを外すと自動確認を停止できます。</p>
 <h3>ファイルを確認するには？</h3>
 <pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
 <p>Lite版はファイル名を <code>kotoVim_lite.exe</code> に変えて実行します。入手したテスト版の <code>SHA256.txt</code> に掲載されている値と照合します。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
@@ -53,7 +55,7 @@
 <p>通知領域で起動とバージョンを確認し、書き込み可能な欄をクリックします。IMEで変換中の文字があれば確定してから <kbd>F8</kbd> を試してください。パスワードや読み取り専用欄は対象外です。必要に応じて通知領域で一時停止できます。</p>
 </section>
 <section id="english" lang="en"><h2>Commands</h2>
-<p>This guide covers the Standard and Lite editions of 0.9.0-rc.20. Document-level commands operate within the active editable field.</p>
+<p>This guide covers the Standard and Lite editions of 0.9.0-rc.22. Document-level commands operate within the active editable field.</p>
 <div class="kv-search" hidden><label>Filter commands <input type="search" data-filter autocomplete="off"></label></div>
 <div class="kv-table"><table>
 <thead><tr><th scope="col">Keys</th><th scope="col">Behavior</th></tr></thead>
@@ -92,6 +94,8 @@
 <p>Full testing of the current build across Office apps and hands-on Windows 10 testing are pending.</p>
 </section>
 <section id="verify-en" lang="en"><h2>Verification and FAQ</h2>
+<h3>How do I check for an update?</h3>
+<p>Open Updates in the tray and select Check for updates. By default, kotoVim checks for public releases 15 seconds after startup and once every 24 hours while running. Click the notice to open the <a href="en.html#download">downloads section</a>. Each version is announced once. Uncheck Automatically check and notify to turn these checks off.</p>
 <h3>How do I verify the file?</h3>
 <pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
 <p>Use <code>kotoVim_lite.exe</code> in the command for the Lite edition. Compare the result with the matching value in the test release’s <code>SHA256.txt</code>. If blocked, use the approved Windows or workplace review process.</p>
