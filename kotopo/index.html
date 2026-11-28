@@ -4,45 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>kotopo — キーボードでポインタを操作 | eto works</title>
-  <meta name="description" content="四分割と英字ヒントでポインタを動かすWindows用無料ツール。">
+  <meta name="description" content="画面を四つに分けて、行きたい場所へ飛ぶ。ボタンやリンクは、上に現れる英字を打ってクリックできます。">
   <link rel="stylesheet" href="../site.css">
   <link rel="stylesheet" href="kotopo.css">
-  <script src="demo.js" defer></script>
+  <script defer src="languages.js"></script>
+  <script defer src="language.js"></script>
+  <script defer src="demo.js"></script>
 </head>
-<body class="kotopo">
-<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotopo"><a href="./" aria-current="page">kotopo</a><a href="support.html">操作ガイド</a><a href="#en" lang="en">English</a></nav></header>
+<body class="kotopo" data-title="homeTitle" data-description="intro">
+<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotopo"><a href="./" aria-current="page">kotopo</a><a href="support.html" data-text="guide">操作ガイド</a><label class="kp-language" hidden><span data-text="language">言語</span><select id="site-language"><option value="ja" lang="ja">日本語</option><option value="en" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option><option value="ko" lang="ko">한국어</option><option value="es" lang="es">Español</option></select></label></nav></header>
 <main class="shell kp-main">
   <section class="kp-hero">
     <div>
-      <p class="platform" lang="en">Windows · v0.6.0</p>
-      <h1>kotopo</h1>
-      <p class="lead">狙った場所へ、<br>キーボードから。</p>
-      <p>画面を四つに分けて、行きたい場所へ飛ぶ。ボタンやリンクは、上に現れる英字を打ってクリックできます。</p>
-      <a class="download" href="https://github.com/eto-h/KotoPointer/releases/download/v0.6.0/KotoPointer.exe">Windows 版を無料ダウンロード <span aria-hidden="true">↓</span></a>
-      <p class="file">配布ファイル・起動時の名前は KotoPointer.exe / KotoPointer です。</p>
+      <p class="platform" lang="en">Windows · v0.7.0</p><h1>kotopo</h1>
+      <p class="lead" data-text="lead">狙った場所へ、キーボードから。</p>
+      <p data-text="intro">画面を四つに分けて、行きたい場所へ飛ぶ。ボタンやリンクは、上に現れる英字を打ってクリックできます。</p>
+      <p id="download" data-text="availability">Windows 版の一般配布を準備しています。</p>
+      <p class="file" data-text="filename">実行ファイル名は KotoPointer.exe です。</p>
     </div>
     <figure class="demo" aria-labelledby="demo-title">
-      <figcaption id="demo-title">四分割を試す</figcaption>
-      <div class="board" role="group" aria-label="四分割の操作例">
-        <div class="selection"><span>Q</span><span>W</span><span>A</span><span>S</span></div>
-      </div>
-      <p class="demo-instruction" hidden>下のキーを選んで3段階まで試せます。キーにフォーカスすると、キーボードでも操作できます。</p>
-      <div class="demo-controls" hidden><button type="button">Q</button><button type="button">W</button><button type="button">A</button><button type="button">S</button><button type="button" class="reset">最初に戻す</button></div>
+      <figcaption id="demo-title" data-text="demo">四分割を試す</figcaption>
+      <div class="board" role="group" aria-labelledby="demo-title"><div class="selection"><span>Q</span><span>W</span><span>A</span><span>S</span></div></div>
+      <p class="demo-instruction" hidden data-text="demoHelp">下のキーを選んで3段階まで試せます。キーにフォーカスすると、キーボードでも操作できます。</p>
+      <div class="demo-controls" hidden><button type="button">Q</button><button type="button">W</button><button type="button">A</button><button type="button">S</button><button type="button" class="reset" data-text="reset">最初に戻す</button></div>
       <output aria-live="polite">画面全体</output>
     </figure>
   </section>
-  <section class="guide-section" id="start"><h2>はじめてのクリック</h2>
-    <ol><li><strong>KotoPointer.exe</strong> を起動して <kbd>F9</kbd>。ポインタのある画面に区画が表示されます。</li>
-    <li>右上なら <kbd>W</kbd>。続けて <kbd>A</kbd> を押すと、その区画の左下へ移ります。</li>
-    <li>矢印キーで位置を整え、<kbd>Space</kbd> でクリック。文字入力に戻るときは <kbd>Esc</kbd> を押します。</li></ol>
-    <p>ボタンを直接選ぶには、操作モードで <kbd>H</kbd> を押し、対象に付いた英字を順に入力します。</p>
-    <a href="support.html">左手操作・2画面・中ボタンドラッグのガイド →</a>
+  <section class="guide-section" id="start"><h2 data-text="first">はじめてのクリック</h2>
+    <ol><li data-text="start">KotoPointer.exe を起動し、<kbd>F9</kbd> を押すと、ポインタのある画面に区画が現れます。</li>
+        <li data-text="choose">右上なら <kbd>W</kbd>。続けて <kbd>A</kbd> を押すと、その区画の左下へ移ります。</li>
+        <li data-text="click">矢印キーで位置を整え、<kbd>Space</kbd> でクリック。文字入力に戻るには <kbd>Esc</kbd> を押します。</li></ol>
+    <p data-text="direct">ボタンを直接選ぶには、操作モードで <kbd>H</kbd> を押し、対象に付いた英字を順に入力します。</p><a href="support.html" data-text="guideLink">左手操作・2画面・中ボタンドラッグのガイド →</a>
   </section>
-  <section class="guide-section" id="en" lang="en"><h2>Quick start</h2>
-    <p>Download and run KotoPointer.exe on Windows. Press <kbd>F9</kbd> to start. Narrow down a region with <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>A</kbd> or <kbd>S</kbd>, then press <kbd>Space</kbd> to click. To click a button or link directly, press <kbd>H</kbd> and type its label. Press <kbd>Esc</kbd> to close hints, then again to leave mouse mode.</p>
-    <p><a href="https://github.com/eto-h/KotoPointer/releases/tag/v0.6.0">GitHub release · v0.6.0</a> · <a href="support.html#en">English controls and support</a></p>
-  </section>
+  <section class="guide-section" id="en"><h2 data-text="appLang">アプリの表示言語</h2><p data-text="setLang">通知領域の KotoPointer アイコンを右クリックし、「言語」から選択します。変更はすぐ反映され、次回の起動後も保持されます。操作キーは全言語で共通です。</p></section>
 </main>
-<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報"><a href="privacy.html">Privacy</a><a href="licenses.html">Licenses</a><a href="support.html#contact">Contact</a></nav></footer>
+<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報" data-nav-label="productLinks"><a href="privacy.html" data-text="privacy">プライバシー</a><a href="licenses.html" data-text="licenses">ライセンス・配布情報</a><a href="support.html#contact" data-text="contact">お問い合わせ</a></nav></footer>
 </body>
 </html>

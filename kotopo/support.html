@@ -3,31 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>操作ガイド・お問い合わせ | kotopo | eto works</title>
-  <meta name="description" content="kotopoのキー操作、英字ヒント、デュアルディスプレイと中ボタンドラッグ。">
+  <title>操作ガイド | kotopo | eto works</title>
+  <meta name="description" content="起動するとWindowsの通知領域に常駐します。F9 で操作モードを切り替えます。">
   <link rel="stylesheet" href="../site.css">
   <link rel="stylesheet" href="kotopo.css">
+  <script defer src="languages.js"></script>
+  <script defer src="language.js"></script>
 </head>
-<body class="kotopo">
-<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotopo"><a href="./">kotopo</a><a href="support.html" aria-current="page">操作ガイド</a><a href="#en" lang="en">English</a></nav></header>
+<body class="kotopo" data-title="guide" data-description="guideIntro">
+<header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotopo"><a href="./">kotopo</a><a href="support.html" aria-current="page" data-text="guide">操作ガイド</a><label class="kp-language" hidden><span data-text="language">言語</span><select id="site-language"><option value="ja" lang="ja">日本語</option><option value="en" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option><option value="ko" lang="ko">한국어</option><option value="es" lang="es">Español</option></select></label></nav></header>
 <main class="article">
-  <h1>操作ガイド</h1><p>kotopo（配布名 KotoPointer）は、起動するとWindowsの通知領域に常駐します。<kbd>F9</kbd> で操作モードを切り替えます。</p>
-  <section><h2>キー操作</h2><dl class="keys">
-    <dt>Q / W / A / S</dt><dd>左上・右上・左下・右下へ移動。続けて押すたびにその区画を四分割します。微調整中も同じキーで画面全体から選び直せます。</dd>
-    <dt>Backspace / Home</dt><dd>親区画に戻る／画面全体から選び直す。</dd>
-    <dt>R / D / F / G</dt><dd>上・左・下・右へ微調整。矢印キーも使えます。短押しで1ピクセル、長押しで加速します。</dd>
-    <dt>1 / 2 / 3</dt><dd>精密・高速・最速。初期値は2。通知領域の「移動速度」からも変更できます。</dd>
-    <dt>Space / E</dt><dd>左クリック／右クリック。Spaceを素早く2回押すとダブルクリック。Enterは手前のアプリに渡ります。</dd>
-    <dt>T / V</dt><dd>上／下にスクロール。Page Up / Page Downも使えます。長押しで連続スクロールします。</dd>
-    <dt>H</dt><dd>手前のウィンドウに英字ヒントを表示。たとえば「AS」なら A、S の順に押すと左クリック。Backspaceで1文字戻り、Escでヒントを閉じます。</dd>
-    <dt>Tab</dt><dd>拡張表示で次のモニターの中央へ移動。矢印キーや左手の移動キーでも画面境界を越えられます。</dd>
-    <dt>M</dt><dd>中ボタンの保持／解除。SOLIDWORKSではモデル上で M を押し、移動キーでドラッグして、もう一度 M で離します。</dd>
-    <dt>Esc / F9</dt><dd>通常のマウス操作モードを終了。アプリ自体を閉じるには、通知領域のアイコンを右クリックして「終了」を選びます。</dd>
-  </dl></section>
-  <section><h2>ヒントが出ないとき</h2><p>ヒントに使えるのは、手前のウィンドウがWindowsに操作対象として公開している要素です。図面やキャンバスの中では <kbd>Esc</kbd> でヒントを閉じ、四分割と微調整で選んでください。</p></section>
-  <section lang="en" id="en"><h2>Controls and support</h2><p>Press F9 to toggle mouse mode. Q/W/A/S select the top-left, top-right, bottom-left and bottom-right regions. Use the arrows or R/D/F/G to fine-tune the pointer. Space clicks, E right-clicks, T/V scroll, and 1/2/3 change speed. Tab switches monitors. M toggles middle-button drag. H shows clickable labels in the active window. Press Esc to leave hints or mouse mode.</p></section>
-  <section id="contact"><h2>お問い合わせ / Contact</h2><p>件名に「kotopo」、本文にWindowsのバージョン、対象アプリ、押したキーと起きた現象をお書きください。</p><p lang="en">Please include your Windows version, the affected app and the keys you pressed.</p><a href="mailto:support@eto-works.com?subject=kotopo">support@eto-works.com</a></section>
+  <h1 data-text="guide">操作ガイド</h1><p data-text="guideIntro">起動するとWindowsの通知領域に常駐します。<kbd>F9</kbd> で操作モードを切り替えます。</p>
+  <section><h2 data-text="keys">キー操作</h2><dl class="keys">
+    <dt>Q / W / A / S</dt><dd data-text="grid">左上・右上・左下・右下を選んで繰り返し絞り込みます。微調整中もこのキーで画面全体から選び直せます。</dd>
+    <dt>Backspace / Home</dt><dd data-text="keyRegion">Backspace 親区画に戻る / Home 画面全体から選び直す</dd>
+    <dt>R / D / F / G</dt><dd data-text="keyMove">R 上 / D 左 / F 下 / G 右 または矢印キー。短押しで1ピクセル、長押しで加速。</dd>
+    <dt>1 / 2 / 3</dt><dd data-text="speedDetail">1 精密 / 2 高速 / 3 最速。初期値は2。通知領域の「移動速度」からも変更できます。</dd>
+    <dt>Space / E</dt><dd data-text="keyClick">Space 左クリック / E 右クリック。Spaceを素早く2回でダブルクリック。Enterは対象アプリへ。</dd>
+    <dt>T / V</dt><dd data-text="keyScroll">T / Page Up 上スクロール、V / Page Down 下スクロール。長押しで連続スクロール。</dd>
+    <dt>H</dt><dd data-text="keyHint">H 英字ヒントを表示。ラベルを入力してクリック、Backspaceで1文字戻り、Escでヒントを閉じます。</dd>
+    <dt>Tab</dt><dd data-text="keyMonitor">Tab 次の画面の中央へ。移動キーでも画面境界を越えられます。</dd>
+    <dt>M</dt><dd data-text="middleDetail">M で中ボタンを保持／解除。SOLIDWORKSではモデル上で押し、移動キーでドラッグ、もう一度 M で離します。</dd>
+    <dt>Esc / F9</dt><dd data-text="keyMode">F9 モード切替　Esc 終了</dd>
+  </dl><p data-text="quit">終了するには操作モードを抜け、通知領域のアイコンを右クリックして「終了」を選びます。</p></section>
+  <section><h2 data-text="noHint">ヒントが出ないとき</h2><p data-text="noHintText">ヒントは、手前のウィンドウがWindowsに公開している操作対象に表示されます。図面やキャンバスでは <kbd>Esc</kbd> でヒントを閉じ、四分割と微調整を使ってください。</p></section>
+  <section class="guide-section" id="en"><h2 data-text="appLang">アプリの表示言語</h2><p data-text="setLang">通知領域の KotoPointer アイコンを右クリックし、「言語」から選択します。変更はすぐ反映され、次回の起動後も保持されます。操作キーは全言語で共通です。</p></section>
+  <section id="contact"><h2 data-text="contact">お問い合わせ</h2><p data-text="mail">件名に「kotopo」、本文にWindowsのバージョン、対象アプリ、押したキーと起きた現象をお書きください。</p><a href="mailto:support@eto-works.com?subject=kotopo">support@eto-works.com</a></section>
 </main>
-<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報"><a href="privacy.html">Privacy</a><a href="licenses.html">Licenses</a><a href="support.html#contact">Contact</a></nav></footer>
+<footer class="footer shell"><p>eto works</p><nav aria-label="製品情報" data-nav-label="productLinks"><a href="privacy.html" data-text="privacy">プライバシー</a><a href="licenses.html" data-text="licenses">ライセンス・配布情報</a><a href="support.html#contact" data-text="contact">お問い合わせ</a></nav></footer>
 </body>
 </html>

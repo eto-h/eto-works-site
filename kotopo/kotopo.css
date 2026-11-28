@@ -1,6 +1,9 @@
 .kotopo { --hint: #a4f4cf; --grid: #416565; }
 .kotopo a { color: var(--hint); }
 .kotopo .brand { color: var(--ink); }
+.kotopo .kp-language:not([hidden]) { display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; }
+.kotopo .kp-language select { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--grid); border-radius: .25rem; padding: .35rem; }
+.kotopo .kp-language select:focus-visible { outline: 2px solid var(--hint); outline-offset: 2px; }
 .kotopo .kp-main { padding-bottom: 4rem; }
 .kotopo .kp-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); padding-block: clamp(3rem, 8vw, 6.5rem); }
 .kotopo .kp-hero h1 { font-size: clamp(3.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: -.065em; }

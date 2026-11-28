@@ -4,7 +4,7 @@ const selection = demo.querySelector(".selection");
 const output = demo.querySelector("output");
 const buttons = Array.from(controls.querySelectorAll("button:not(.reset)"));
 const reset = controls.querySelector(".reset");
-const names = ["左上", "右上", "左下", "右下"];
+const regions = ["tl", "tr", "bl", "br"];
 const path = [];
 
 function draw() {
@@ -23,14 +23,15 @@ function draw() {
   const done = path.length === 3;
   for (const button of buttons) button.disabled = done;
   reset.disabled = path.length === 0;
-  output.textContent = path.length ? path.map(index => names[index]).join(" → ") : "画面全体";
-  if (done) reset.focus();
+  const labels = kotopoMessages[document.documentElement.lang];
+  output.textContent = path.length ? path.map(index => labels[regions[index]]).join(" → ") : labels.whole;
 }
 
 function selectRegion(index) {
   if (path.length >= 3) return;
   path.push(index);
   draw();
+  if (path.length === 3) reset.focus();
 }
 
 buttons.forEach((button, index) => button.addEventListener("click", () => selectRegion(index)));
@@ -47,5 +48,6 @@ controls.addEventListener("keydown", event => {
   if (!event.repeat) selectRegion(index);
 });
 controls.hidden = false;
+document.addEventListener("kotopo-language", draw);
 demo.querySelector(".demo-instruction").hidden = false;
 draw();
