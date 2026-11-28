@@ -1,36 +1,52 @@
-
-.home-catalog { flex:1; }
-.game-grid { display:grid; grid-template-columns:1fr 1fr; }
-.game-grid>.hero { min-height:40rem; padding:4rem 1.7rem; align-items:end; }
-.game-copy { width:min(100%,34rem); margin-inline:auto; text-align:center; }
-.game-note { color:#e1e6e2; margin-top:1.2rem; font-size:.95rem; }
-.game-note span { color:#bdc9c3; font-size:.85rem; }
-.adrift-card { background:linear-gradient(0deg,#0c1819f5,#0c181977 58%,#0c181922),url("adrift/assets/AdriftIcon.png") center 45%/cover; }
-.adrift-title { font-size:clamp(3rem,6vw,6rem); font-weight:600; letter-spacing:.13em; margin-bottom:0; line-height:1.2; }
-@media(max-width:760px) { .game-grid { grid-template-columns:1fr; } .game-grid>.hero { min-height:37rem; padding:3rem 1.25rem; } }
-
-.tools-home { padding-block:clamp(2.4rem,5vw,4.5rem); }
-.tools-home>h2 { margin:0 0 .85rem; font-size:1.1rem; font-weight:600; letter-spacing:.09em; }
-.kotovim-home { position:relative; display:grid; min-height:23rem; align-items:center; isolation:isolate; overflow:hidden; border:1px solid var(--line); border-radius:.35rem; background:#100e20; }
-.kotovim-cover { position:absolute; z-index:-2; width:100%; height:100%; object-fit:cover; object-position:center; }
-.kotovim-home::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#100e20e8,#100e2080 32%,transparent 62%); }
-.kotovim-copy { padding:clamp(1.5rem,5vw,3.6rem); }
-.kotovim-copy h3 { margin:0 0 .45rem; line-height:1.1; font-size:clamp(2.3rem,5vw,4rem); }
-.kotovim-copy p { margin:0 0 1.2rem; }
-.kotovim-copy p span { color:var(--muted); font-size:.9rem; }
-.kotovim-copy a { display:inline-flex; align-items:center; min-height:44px; padding:.4rem .95rem; border:1px solid #9b7d55; border-radius:.2rem; background:#0b0f19d9; text-decoration:none; }
-.kotovim-copy a:hover { background:#202838; }
-.kotopo-home { display:grid; grid-template-columns:minmax(0,1fr) minmax(7rem,30%); align-items:center; gap:1rem; margin-top:1rem; border:1px solid #395854; border-radius:.35rem; background:#102323; }
-.kotopo-keys { margin-right:clamp(.8rem,4vw,3rem); display:grid; grid-template-columns:1fr 1fr; border:1px solid #618779; border-radius:.35rem; overflow:hidden; }
-.kotopo-keys span { display:grid; place-items:center; padding:.4em; color:#a4f4cf; border:1px solid #426059; font:600 clamp(1rem,4vw,2.4rem)/1.3 monospace; }
-@media(max-width:500px) { .kotopo-home { grid-template-columns:1fr; } .kotopo-keys { display:none; } }
-@media(max-width:660px) {
-  .kotovim-home { min-height:0; }
-  .kotovim-cover { position:static; height:auto; aspect-ratio:2/1; object-position:right center; }
-  .kotovim-home::before { display:none; }
-  .kotovim-copy { padding:1.4rem; }
+.wordmark { margin: 0; font-size: 1.15rem; }
+.catalog { padding-block: clamp(1.6rem, 4vw, 3rem); }
+.catalog section + section { margin-top: clamp(2.25rem, 5vw, 4rem); }
+.section-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: .7rem; margin: 0 0 1rem; font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.35; }
+.section-title span { color: var(--muted); font-size: .82rem; font-weight: 500; letter-spacing: .05em; }
+.catalog small { display: block; color: var(--muted); font-size: .85rem; line-height: 1.55; margin-top: .3rem; }
+.game-grid, .tool-grid { display: grid; gap: 1rem; }
+.game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.game, .tool { border: 1px solid var(--line); border-radius: .75rem; overflow: hidden; }
+.game { min-height: clamp(17rem, 25vw, 21rem); display: flex; flex-direction: column; justify-content: end; align-items: start; padding: clamp(1.25rem, 3vw, 2rem); background-size: cover; }
+.beyond { background-image: linear-gradient(0deg, #070b18 0%, #080e1cbb 42%, transparent 85%), url("assets/BeyondTitle.png"); background-position: center 70%; }
+.adrift { background-image: linear-gradient(0deg, #0a181a 0%, #112126bb 42%, transparent 85%), url("adrift/assets/AdriftIcon.png"); background-position: center 43%; }
+.game h3 { margin: 0; font: 600 clamp(2.1rem, 4vw, 3.4rem)/1.15 system-ui, sans-serif; letter-spacing: .12em; }
+.game h3 img { display: block; width: clamp(11rem, 19vw, 15rem); height: auto; }
+.game p { margin: .65rem 0 .85rem; }
+.game small { color: #d1d7db; }
+.discover { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; width: fit-content; color: #f2d5a6; text-decoration: none; font-weight: 600; font-size: .9rem; }
+.discover::after { content: "→" / ""; }
+.discover:hover { text-decoration: underline; }
+.tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tool { display: flex; flex-direction: column; background: #10151f; }
+.preview { display: grid; place-items: center; height: clamp(7rem, 12vw, 9rem); border-bottom: 1px solid var(--line); }
+.vim { background: #1a182b url("kotovim/home-cover.webp") right center / 150% auto no-repeat; }
+.pointer { background: #112824; }
+.quadrants { display: grid; grid-template-columns: 1fr 1fr; width: 7rem; border: 1px solid #659083; border-radius: .3rem; overflow: hidden; }
+.quadrants span { text-align: center; color: #a4f4cf; padding: .28rem; font: 600 1rem/1.35 monospace; }
+.quadrants span:nth-child(odd) { border-right: 1px solid #486b60; }
+.quadrants span:nth-child(-n+2) { border-bottom: 1px solid #486b60; }
+.focus { background: linear-gradient(115deg, #30293e, #263d40); }
+.focus span { padding: .45rem .75rem; color: #f4f0f9; background: #201b2f; border-left: 3px solid #7ef2ca; border-radius: .3rem; font-size: .85rem; font-weight: 650; }
+.tool-copy { flex: 1; display: flex; flex-direction: column; padding: 1.2rem 1.3rem .8rem; }
+.tool h3 { margin: 0; font-size: 1.85rem; line-height: 1.2; letter-spacing: -.035em; }
+.tool p { margin: .7rem 0 1rem; }
+.tool .discover { margin-top: auto; }
+#contact { border-top: 1px solid var(--line); padding-top: 2rem; }
+#contact p { max-width: 52rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; }
+.contact-links a, .home .footer a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 760px) {
+  .tool-grid { grid-template-columns: 1fr; }
+  .tool { display: grid; grid-template-columns: minmax(7rem, 30%) minmax(0, 1fr); }
+  .preview { height: auto; border: 0; }
+  .focus span { margin: .65rem; }
+  .vim { background-size: auto 100%; background-position: 77% center; }
 }
-
-.kotodo-home { display:grid; grid-template-columns:1fr auto; align-items:center; margin-top:1rem; border:1px solid #595065; border-radius:.35rem; background:radial-gradient(ellipse at right bottom,#233f43,transparent 65%),#231e32; }
-.kotodo-cue { margin-right:clamp(1rem,5vw,4rem); padding:.55em .9em; border-left:3px solid #7ef2ca; border-radius:.35em; color:#f4f0f9; background:#201b2fdf; font-weight:650; }
-@media(max-width:660px) { .kotodo-home { grid-template-columns:1fr; } .kotodo-cue { display:none; } }
+@media (max-width: 560px) {
+  .game-grid { grid-template-columns: 1fr; }
+  .game { min-height: 15rem; }
+  .tool { display: flex; }
+  .preview { height: 6rem; }
+  .vim { background-size: cover; background-position: center; }
+}
