@@ -32,7 +32,6 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
   text-decoration: none;
 }
 .download-actions .download-button:hover { background: #c6f9e2; }
-.download-actions .download-alternative { display: inline-flex; align-items: center; min-height: 44px; color: #a4f4cf; }
 .product-download a:focus-visible { outline: 2px solid #a4f4cf; outline-offset: 4px; }
 .product-download .download-details { margin: .65rem 0 0; color: var(--muted); font-size: .85rem; }
 .download-details a { color: inherit; }
