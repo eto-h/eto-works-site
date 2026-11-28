@@ -3,32 +3,33 @@
 <link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="kotovim.css"><link rel="icon" href="logo.svg" type="image/svg+xml"></head>
 <body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="en.html" lang="en">English</a></nav></header>
 <main class="shell">
-<section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">その編集、何キーでできる？</p>
+<section class="kv-intro"><div class="kv-copy"><img src="logo.svg" width="72" height="72" alt=""><h1>kotoVim</h1><p class="kv-lead">いつもの入力欄で、Vim風の編集。</p>
 <p>AIに下書きを任せても、最後のひと言を整えるのは自分。単語へ飛び、数キーで書き換える。魔法のように見えるVimの操作を、いつものWordやOutlookで試してみませんか。</p>
-<div class="kv-actions"><a class="kv-button" href="#golf-title">Vimゴルフを試す</a><a href="#download">配布状況</a></div></div>
+<div class="kv-actions"><a class="kv-button" href="support.html">操作ガイドを見る</a><a href="#download">配布状況</a></div></div>
 <figure class="kv-editor"><figcaption>日本語の単語移動の例</figcaption><div class="kv-paper" lang="ja"><span>日本語を</span>読む。次の文。</div><div class="kv-mode"><strong>NORMAL</strong><span><kbd>w</kbd> / <kbd>b</kbd></span></div></figure></section>
-<section class="kv-golf" aria-labelledby="golf-title">
-<div><h2 id="golf-title">ミニVimゴルフ</h2>
-<p>ゴールは同じ。遠回りを省いて、何キーで編集できるか考えるのがVimゴルフです。まずは単語一つから。</p></div>
-<div class="kv-golf-card"><p lang="en"><code>Meet on Tue<mark>s</mark>day.</code></p>
-<p>カーソルは色の付いた文字。<code>Tuesday</code> を <code>Thursday</code> に変えるには？</p>
-<details><summary>3キーのルートを見る</summary><p><kbd>c</kbd> <kbd>i</kbd> <kbd>w</kbd> で単語全体を消して入力モードへ。続けて <code>Thursday</code> と入力し、<kbd>Esc</kbd> で戻ります。</p></details></div>
-</section>
 <div class="kv-sections">
 <section id="download"><h2>ダウンロード</h2>
-<p>開発中です。日本語版・英語専用版の無料ダウンロードを準備しています。配布を開始したら、ここに入手先とファイルの確認方法を掲載します。</p>
-<dl class="kv-meta"><dt>開発版</dt><dd>0.9.0-rc.4 · 2026-11-23</dd><dt>対象環境</dt><dd>Windows 10/11 x64（Windows 10は実機未確認）、Windows付属の.NET Framework 4.x</dd></dl>
+<p>一般向けの無料ダウンロードは準備中です。<a href="https://github.com/eto-h/kotoVim/releases/tag/v0.9.0-rc.20">GitHubのテスト版</a>をダウンロードするには、リポジトリへのアクセス権が必要です。</p>
+<dl class="kv-meta">
+<dt>開発版</dt><dd>0.9.0-rc.20 · 2026-11-28</dd>
+<dt>標準版</dt><dd><code>kotoVim.exe</code>（666 KiB）。日本語の単語分割にVaporettoを使用。</dd>
+<dt>Lite版</dt><dd><code>kotoVim_lite.exe</code>（150 KiB）。日本語の単語分割にTinySegmenterを使用。</dd>
+<dt>対象環境</dt><dd>Windows 10/11 x64（Windows 10は実機未確認）、Windows付属の.NET Framework 4.x</dd></dl>
+<p>どちらもインストール不要の単体EXEで、同じ編集コマンドを使えます。日本語の単語や文節の区切りは版によって異なることがあります。</p>
 <p><a href="#notice">開発版の利用について</a></p></section>
 <section><h2>はじめて使う</h2>
-<ol><li>メモ帳のテスト文書にカーソルを置き、Normalを確認します。</li>
-<li>iで入力。左Alt単独で日本語Microsoft IMEを切り替え、変換を確定します。</li>
-<li>F8でNormalに戻り、w/bで日本語の区切りへ移動、編集後にuで元に戻します。</li>
+<ol><li>メモ帳の本文をクリックし、Normalと表示されることを確認します。</li>
+<li><kbd>i</kbd> でInsertに入り、文字を入力します。左Alt単独でMicrosoftの日本語IMEを切り替えられます。</li>
+<li><kbd>Esc</kbd> または <kbd>Ctrl+[</kbd> でNormalに戻ります。<kbd>F8</kbd> も使えます。</li>
+<li><kbd>w</kbd> / <kbd>b</kbd> で単語を移動し、<kbd>ciw</kbd> でカーソルのある単語を書き換えます。範囲を選択するときは <kbd>v</kbd>、編集を取り消すときは <kbd>u</kbd> です。</li>
 <li>通知領域の「終了」で停止します。</li></ol>
 <p><a href="support.html">操作・対応アプリ・FAQ</a></p></section></div>
 <section class="kv-history" id="notice"><h2>開発版の利用について</h2>
 <p>kotoVimは個人が開発中のソフトウェアで、現状のまま提供されます。動作、互換性、特定の目的への適合性は保証しません。お使いの環境での利用は、ご自身の判断と責任で行ってください。</p>
 <p>本ソフトウェアの利用または利用できなかったことにより生じた損害について、開発者は適用法令で認められる範囲で責任を負いません。故意または重大な過失による責任など、法令上免責できない責任には、この免責は適用されません。</p></section>
 <section class="kv-history"><h2>更新履歴</h2>
+<p><strong>0.9.0-rc.20</strong> — 標準版とLite版で編集コマンドを統一。</p>
+<p><strong>0.9.0-rc.19</strong> — 前の単語末、文の先頭、行内の文字への移動を追加。削除・変更・コピーと組み合わせて使用可能。</p>
 <p><strong>0.9.0-rc.4</strong> — 小文字の単語操作で日本語の区切りを推定。PowerPointの移動を直接指定し、通知領域のメニューに版名とバージョンを表示。</p>
 <p><strong>0.9.0-rc.2</strong> — 日英を別EXEに分離。単語移動を修正し、diw / ciw / yiw を追加。</p>
 <p><strong>0.9.0-rc.1</strong> — 名称をkotoVimに統一。日英UI、新アイコン、配布ビルドの整備。</p>

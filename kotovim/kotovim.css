@@ -32,13 +32,3 @@
 .kv-copy-example + span { margin-inline-start:.7rem; }
 @media (max-width:520px) { .kv-table th, .kv-table td { padding:.45rem; } .kv-meta { grid-template-columns:minmax(0,1fr); } }
 .kv-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem 1.25rem; }
-.kv-golf { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; gap:1.25rem clamp(1.25rem,5vw,4rem); border-top:1px solid var(--line); padding-block:clamp(1.75rem,5vw,3.5rem); }
-.kv-golf h2 { margin:0 0 .65rem; font-size:clamp(1.5rem,4vw,2.3rem); line-height:1.2; }
-.kv-golf p { color:var(--muted); }
-.kv-golf kbd { white-space:nowrap; }
-.kv-golf-card { padding:1.05rem 1.2rem; background:var(--panel); border:1px solid var(--line); border-radius:.7rem; }
-.kv-golf-card > p:first-child { margin:0; color:var(--ink); font-size:clamp(1.05rem,3vw,1.5rem); }
-.kv-golf-card mark { background:#ffcf81; color:#172535; border-radius:.16rem; }
-.kv-golf-card summary { cursor:pointer; color:var(--gold); }
-.kv-golf-card details p { margin-bottom:0; }
-@media (max-width:700px) { .kv-golf { grid-template-columns:minmax(0,1fr); } }

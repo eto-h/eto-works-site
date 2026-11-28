@@ -2,37 +2,102 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kotoVim 操作ガイド | ETO Works</title>
 <link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="kotovim.css"><link rel="icon" href="logo.svg" type="image/svg+xml"></head>
 <body class="kotovim"><header class="bar shell"><a class="brand" href="../">eto works</a><nav aria-label="kotoVim"><a href="./">kotoVim</a><a href="support.html">操作ガイド</a><a href="#english" lang="en">English</a></nav></header>
-<main class="article kv-guide"><h1>kotoVim 操作ガイド</h1><section ><h2>操作一覧</h2>
+<main class="article kv-guide">
+<h1>kotoVim 操作ガイド</h1>
+<p>0.9.0-rc.20の標準版とLite版に対応しています。文書全体を対象とする操作の範囲は、編集中の入力欄によって決まります。</p>
+<section><h2>操作一覧</h2>
 <div class="kv-search" hidden><label>操作を検索 <input type="search" data-filter autocomplete="off"></label></div>
-<div class="kv-table"><table><thead><tr><th scope="col">キー</th><th scope="col">動作・制約</th></tr></thead><tbody><tr><th scope="row"><code>i / v / Esc / F8</code></th><td>入力・選択・Normalへ復帰</td></tr><tr><th scope="row"><code>h j k l / gg G</code></th><td>移動、文書の先頭と末尾</td></tr><tr><th scope="row"><code>w b e / 3w</code></th><td>単語移動。日本語版では漢字・かな・助詞から区切りを推定</td></tr><tr><th scope="row"><code>W B E</code></th><td>空白区切りのまとまりで移動</td></tr><tr><th scope="row"><code>dw cw cc dd / o O</code></th><td>dw・cwはカーソル位置から編集。範囲・改行に制約</td></tr><tr><th scope="row"><code>diw ciw yiw</code></th><td>単語全体を削除・変更・コピー</td></tr><tr><th scope="row"><code>y p u</code></th><td>クリップボードと元に戻す</td></tr><tr><th scope="row"><code>r / :%s/old/new/g</code></th><td>1文字・リテラル一括置換。対象欄に制限</td></tr><tr><th scope="row"><code>dW / viw / viW / .</code></th><td>未実装</td></tr></tbody></table></div>
-<p>例文をメモ帳に貼り付け、行頭で w を押すと「読む」へ移動します。b で戻ります。</p>
-<pre><code id="sample" lang="ja">日本語を読む。次の文。</code></pre><button type="button" class="kv-copy-example" data-copy="sample" data-done="コピーしました" data-error="例文を選択してコピーしてください。" hidden>例文をコピー</button><span aria-live="polite"></span></section>
-<section><h2>対応アプリ</h2>
-<p>2026-11-22 JST整理。以下はWindows 11の旧版診断ビルドの結果です。公開候補の全面再試験は残っています。</p>
-<ul><li>メモ帳、Word、新Outlook作成本文。モード移行と移動（0.7〜0.8）。</li>
-<li>Excelセル編集中、PowerPointテキストボックス。移動と空行追加（0.7.2〜0.8.1）。</li>
-<li>Chromeアドレスバー・ローカル入力欄、デスクトップ版ChatGPTでNormal移行（0.5.1〜0.6.1）。</li>
-<li>未確認。従来版Outlook、Windows 10、Google検索の実サイトでのキー操作。</li></ul></section>
+<div class="kv-table"><table>
+<thead><tr><th scope="col">キー</th><th scope="col">動作</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>i / v / Esc / Ctrl+[ / F8</code></th><td><code>i</code> でInsert、<code>v</code> でVisual。<code>Esc</code>、<code>Ctrl+[</code>、<code>F8</code> でNormalに戻る。</td></tr>
+<tr><th scope="row"><code>h j k l / 0 $ / gg G</code></th><td>左・下・上・右、行頭・行末、編集中の欄の先頭・末尾へ移動。</td></tr>
+<tr><th scope="row"><code>w b e ge / 3w</code></th><td>次の単語の先頭、前の単語の先頭、単語の末尾、前の単語の末尾へ移動。<code>3w</code> は3回分の移動。日本語にも対応。</td></tr>
+<tr><th scope="row"><code>W B E gE</code></th><td>空白で区切ったまとまりで移動。句読点も同じまとまりに含む。</td></tr>
+<tr><th scope="row"><code>[b / ]b / viP diP ciP yiP</code></th><td>日本語の前・次の文節の先頭へ移動。<code>iP</code> は文節を対象に選択・削除・変更・コピーできるkotoVim独自の指定。</td></tr>
+<tr><th scope="row"><code>( / ) / d) c) y)</code></th><td>前・次の文の先頭へ移動。日本語の <code>。</code> <code>！</code> <code>？</code> に対応。<code>d)</code> などで次の文の直前まで編集。</td></tr>
+<tr><th scope="row"><code>f / t / df / dt</code></th><td>同じ行で次に現れる文字へ移動し、<code>t</code> はその手前で止まる。<code>df</code> は対象文字を含めて削除、<code>dt</code> は対象文字を残す。</td></tr>
+<tr><th scope="row"><code>dw cw / de dE / dW</code></th><td>カーソル位置から移動先まで削除・変更。<code>de</code> と <code>dE</code> は移動先の単語末を含めて削除。<code>cw</code> は変更後にInsertへ移る。</td></tr>
+<tr><th scope="row"><code>diw ciw yiw</code></th><td>カーソルが内側にある単語全体を削除・変更・コピー。</td></tr>
+<tr><th scope="row"><code>D d$ / C c$ / A</code></th><td>行末まで削除、行末まで消してInsert、行末でInsert。</td></tr>
+<tr><th scope="row"><code>dd yy / p P / o O</code></th><td>行を削除・コピー。行単位でコピーした内容は <code>p</code> で下、<code>P</code> で上に貼り付け。<code>o</code> / <code>O</code> は下／上に行を作ってInsert。</td></tr>
+<tr><th scope="row"><code>dG cG yG</code></th><td>現在行から編集中の欄の末尾まで、行単位で削除・変更・コピー。</td></tr>
+<tr><th scope="row"><code>Visual の I / A</code></th><td>選択した各行の行頭／行末に同じ文字列を挿入。</td></tr>
+<tr><th scope="row"><code>r / :%s/旧/新/g</code></th><td>1文字を置換。日本語は <code>r</code> → <code>F2</code> で入力。一括置換コマンドは、対応欄で一致する文字列をまとめて置換。</td></tr>
+<tr><th scope="row"><code>u / R</code></th><td>アプリの元に戻す／やり直すを実行。</td></tr>
+</tbody></table></div>
+<h3>日本語の文や文字へ移動する</h3>
+<p>例文をメモ帳に貼り付けます。Normalで行頭から <kbd>)</kbd> を押すと「結果」の先頭へ、続けて <kbd>(</kbd> を押すと行頭へ戻ります。</p>
+<p>同じ行の句点へ進むには <kbd>f</kbd>、<kbd>F2</kbd> の順に押し、検索窓に「。」を入力します。IME変換を使った場合は文字を確定してから、<kbd>Enter</kbd> で検索を実行します。ひらがなや漢字も1文字ずつ指定できます。半角英数字は <kbd>f</kbd> のあとに直接押せます。</p>
+<pre><code id="sample">明日の会議で資料を確認します。結果を報告します。</code></pre>
+<button type="button" class="kv-copy-example" data-copy="sample" data-done="コピーしました" data-error="例文を選択してコピーしてください。" hidden>例文をコピー</button><span aria-live="polite"></span>
+</section>
+<section><h2>IMEとモード表示</h2>
+<p>Insertや置換窓で左Altを単独で押すと、Microsoftの日本語IMEを切り替えられます。通知領域ではこの切り替えの有効・無効や、<kbd>Ctrl+J</kbd> / <kbd>Ctrl+M</kbd> をEnterにする設定を選べます。</p>
+<p>通知領域の「モード表示」で、詳細、短い1行、N / I / V、非表示から選べます。「表示位置」でアプリの下部とカーソル付近を切り替えられます。</p>
+</section>
+<section><h2>アプリ別の使い方と確認範囲</h2>
+<ul>
+<li>メモ帳、Word、新しいOutlookでは、メモ帳やWordの文書本文、Outlookのメール作成本文をクリックします。各本文でのモード切り替え・移動は旧版で確認済みです。</li>
+<li>Excelでは、シート上でNormalの <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> がセル移動になります。セル内の文章は <kbd>F2</kbd> で編集を開始し、<kbd>F8</kbd> でNormalに切り替えます。セル移動と文字編集は旧版で確認済みです。</li>
+<li>PowerPointでは、テキストボックスや表のセル内の文字をクリックします。<kbd>F8</kbd> でNormalに切り替えられます。両方での文字編集は旧版で確認済みです。</li>
+<li>Chromeのテスト用入力欄では、文や単語末への移動、行単位の削除、句点の検索を確認しました。サイトや入力欄の実装によって使える操作が異なります。</li>
+</ul>
+<p>Office全アプリでの最新版の通し試験と、Windows 10実機での確認は未実施です。</p>
+</section>
 <section id="verify"><h2>確認とFAQ</h2>
-<h3>ファイルを確認するには？</h3><pre><code>Get-FileHash -LiteralPath .\kotoVim-ja.exe -Algorithm SHA256</code></pre>
-<p>対象ビルドの公開ハッシュと照合します。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
-<h3>F8が動作しないときは？</h3>
-<p>通知領域で起動を確認し、編集可能な欄にカーソルを置いてIME変換を確定します。Excelはセル内編集、PowerPointは文字内をクリックします。パスワードや読み取り専用欄は対象外です。必要に応じて通知領域で一時停止またはショートカットを解除できます。</p></section><section id="english" lang="en"><h2>Commands</h2>
+<h3>ファイルを確認するには？</h3>
+<pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
+<p>Lite版はファイル名を <code>kotoVim_lite.exe</code> に変えて実行します。入手したテスト版の <code>SHA256.txt</code> に掲載されている値と照合します。ブロックされた場合はWindowsや勤務先の承認手順を使用してください。</p>
+<h3>Normalに切り替わらないときは？</h3>
+<p>通知領域で起動とバージョンを確認し、書き込み可能な欄をクリックします。IMEで変換中の文字があれば確定してから <kbd>F8</kbd> を試してください。パスワードや読み取り専用欄は対象外です。必要に応じて通知領域で一時停止できます。</p>
+</section>
+<section id="english" lang="en"><h2>Commands</h2>
+<p>This guide covers the Standard and Lite editions of 0.9.0-rc.20. Document-level commands operate within the active editable field.</p>
 <div class="kv-search" hidden><label>Filter commands <input type="search" data-filter autocomplete="off"></label></div>
-<div class="kv-table"><table><thead><tr><th scope="col">Keys</th><th scope="col">Behavior</th></tr></thead><tbody><tr><th scope="row"><code>i / v / Esc / F8</code></th><td>Type, select, return to Normal</td></tr><tr><th scope="row"><code>h j k l / gg G</code></th><td>Caret and document motions</td></tr><tr><th scope="row"><code>w b e / 3w</code></th><td>Word movement and counts. Normal uses verified boundaries in supported fields.</td></tr><tr><th scope="row"><code>W B E</code></th><td>WORD motions group all non-whitespace characters</td></tr><tr><th scope="row"><code>dw cw cc dd / o O</code></th><td>dw and cw start at the caret. Range and line restrictions apply.</td></tr><tr><th scope="row"><code>diw ciw yiw</code></th><td>Delete, change or copy the whole word</td></tr><tr><th scope="row"><code>y p u</code></th><td>Host clipboard and Undo</td></tr><tr><th scope="row"><code>r / :%s/old/new/g</code></th><td>Character or literal bulk replacement in supported fields</td></tr><tr><th scope="row"><code>dW / viw / viW / .</code></th><td>Unimplemented</td></tr></tbody></table></div>
-<p>Paste the sample into Notepad and place the caret at the t in beta. Use b to move to the b, or start at the t and use diw to delete beta.</p>
-<pre><code id="sample-en">alpha  beta, gamma</code></pre><button type="button" class="kv-copy-example" data-copy="sample-en" data-done="Copied" data-error="Select the text to copy it." hidden>Copy example</button><span aria-live="polite"></span></section>
-<section><h2>Compatibility evidence</h2>
-<p>Reviewed 2026-11-22 JST. The following scopes are from earlier Windows 11 diagnostic builds. Full testing of the release candidate is pending.</p>
-<ul><li>Notepad, Word and new Outlook message body: mode and motion tests (0.7–0.8).</li>
-<li>Excel cells in edit mode and PowerPoint text boxes: movement and line opening (0.7.2–0.8.1).</li>
-<li>Chrome address/local fields and desktop ChatGPT Normal entry (0.5.1–0.6.1).</li>
-<li>Unverified: classic Outlook, Windows 10 and live Google Search keyboard flow.</li></ul></section>
-<section id="verify-en"><h2>Verification and FAQ</h2>
-<h3>How do I verify the file?</h3><pre><code>Get-FileHash -LiteralPath .\kotoVim-en.exe -Algorithm SHA256</code></pre>
-<p>Compare the result against the value for that exact build. If blocked, use the approved Windows or workplace review process.</p>
-<h3>Why does F8 not work?</h3>
-<p>Verify that the tray app is running and that the writable text caret is active. Confirm any IME composition first. Excel requires entering cell editing, and PowerPoint requires clicking inside text. Password and read-only fields are excluded. Pause or disable shortcut remapping in the tray when needed.</p></section>
+<div class="kv-table"><table>
+<thead><tr><th scope="col">Keys</th><th scope="col">Behavior</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>i / v / Esc / Ctrl+[ / F8</code></th><td>Enter Insert with <code>i</code> or Visual with <code>v</code>. Return to Normal with <code>Esc</code>, <code>Ctrl+[</code>, or <code>F8</code>.</td></tr>
+<tr><th scope="row"><code>h j k l / 0 $ / gg G</code></th><td>Move left, down, up, or right, to either end of the line, or to the start or end of the active field.</td></tr>
+<tr><th scope="row"><code>w b e ge / 3w</code></th><td>Move to the next word start, previous word start, word end, or previous word end. <code>3w</code> applies the motion three times. Japanese words are supported.</td></tr>
+<tr><th scope="row"><code>W B E gE</code></th><td>Move by groups of non-whitespace characters, including punctuation in the same group.</td></tr>
+<tr><th scope="row"><code>[b / ]b / viP diP ciP yiP</code></th><td>Jump to the previous or next Japanese phrase start. Use kotoVim’s <code>iP</code> text object to select, delete, change, or yank a phrase.</td></tr>
+<tr><th scope="row"><code>( / ) / d) c) y)</code></th><td>Move to the previous or next sentence start, including sentences ending with <code>。</code>, <code>！</code>, or <code>？</code>. Use <code>d)</code>, <code>c)</code>, or <code>y)</code> to act on text up to the next sentence.</td></tr>
+<tr><th scope="row"><code>f / t / df / dt</code></th><td>Find the next occurrence of a character on the current line. <code>t</code> stops just before it. <code>df</code> deletes through the target and <code>dt</code> stops before it.</td></tr>
+<tr><th scope="row"><code>dw cw / de dE / dW</code></th><td>Delete or change text from the caret using a motion. <code>de</code> and <code>dE</code> include the final character of the word or WORD. <code>cw</code> enters Insert.</td></tr>
+<tr><th scope="row"><code>diw ciw yiw</code></th><td>Delete, change, or yank the whole word under the caret.</td></tr>
+<tr><th scope="row"><code>D d$ / C c$ / A</code></th><td>Delete to the end of the line, change to the end of the line, or enter Insert at the line end.</td></tr>
+<tr><th scope="row"><code>dd yy / p P / o O</code></th><td>Delete or yank a line. Paste linewise text below with <code>p</code> or above with <code>P</code>. <code>o</code> / <code>O</code> open a line below or above and enter Insert.</td></tr>
+<tr><th scope="row"><code>dG cG yG</code></th><td>Delete, change, or yank whole lines from the current line to the end of the active field.</td></tr>
+<tr><th scope="row"><code>Visual I / A</code></th><td>Insert the same text at the start or end of each selected line.</td></tr>
+<tr><th scope="row"><code>r / :%s/old/new/g</code></th><td>Replace one character. For Japanese text, press <code>r</code> then <code>F2</code>. The bulk replacement command replaces all matches of a literal string in supported fields.</td></tr>
+<tr><th scope="row"><code>u / R</code></th><td>Run the app’s Undo or Redo.</td></tr>
+</tbody></table></div>
+<h3>Try a word edit</h3>
+<p>Paste the sample into Notepad and place the caret on the <code>t</code> in <code>beta</code>. In Normal, <kbd>de</kbd> deletes through the end of the word. Undo with <kbd>u</kbd>, put the caret back on the <code>t</code>, and use <kbd>diw</kbd> to delete the whole word.</p>
+<p>To search this line, press <kbd>f</kbd> and then the desired ASCII character. To find a Japanese character, press <kbd>f</kbd> then <kbd>F2</kbd>, enter one character in the prompt, confirm any IME composition, and press <kbd>Enter</kbd> to run the search.</p>
+<pre><code id="sample-en">alpha  beta, gamma</code></pre>
+<button type="button" class="kv-copy-example" data-copy="sample-en" data-done="Copied" data-error="Select the text to copy it." hidden>Copy example</button><span aria-live="polite"></span>
+<h3>IME and mode indicator</h3>
+<p>Tap left Alt in Insert or a replacement dialog to toggle the Microsoft Japanese IME. The tray menu lets you turn this shortcut on or off and optionally map <kbd>Ctrl+J</kbd> / <kbd>Ctrl+M</kbd> to Enter.</p>
+<p>In the tray menu, choose Detailed, Compact, Badge (N / I / V), or Hidden under Mode indicator. Select Below the app or Near the caret under Indicator position.</p>
+<h3>Using kotoVim in different apps</h3>
+<ul>
+<li>Click inside a document in Notepad or Word, or inside the message body when composing in new Outlook. Mode switching and motions were verified there in earlier builds.</li>
+<li>In the Excel grid, Normal-mode <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> move between cells. Use <kbd>F2</kbd> to edit cell text and <kbd>F8</kbd> to switch to Normal. Cell navigation and text editing were verified in earlier builds.</li>
+<li>In PowerPoint, click inside the text of a text box or table cell. Use <kbd>F8</kbd> to switch to Normal. Text editing in both was verified in earlier builds.</li>
+<li>Sentence and word-end motions, linewise deletion, and Japanese punctuation searches were verified in a Chrome test field. Available commands vary by site and field.</li>
+</ul>
+<p>Full testing of the current build across Office apps and hands-on Windows 10 testing are pending.</p>
+</section>
+<section id="verify-en" lang="en"><h2>Verification and FAQ</h2>
+<h3>How do I verify the file?</h3>
+<pre><code>Get-FileHash -LiteralPath .\kotoVim.exe -Algorithm SHA256</code></pre>
+<p>Use <code>kotoVim_lite.exe</code> in the command for the Lite edition. Compare the result with the matching value in the test release’s <code>SHA256.txt</code>. If blocked, use the approved Windows or workplace review process.</p>
+<h3>Why does Normal mode not activate?</h3>
+<p>Check that kotoVim is running and verify its version in the tray. Click an editable field, confirm any IME composition, and try <kbd>F8</kbd>. Password and read-only fields are excluded. Use Pause in the tray when needed.</p>
+</section>
 <section id="contact"><h2>お問い合わせ / Feedback</h2>
 <p>Windows、kotoVim、対象アプリのバージョン、欄の種類と再現手順を添えてください。機密文書、個人情報、認証情報は添付しないでください。</p>
 <p lang="en">Include version numbers, field type and reproduction steps. Omit private documents, personal data and credentials.</p>
